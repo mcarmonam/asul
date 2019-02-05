@@ -1,0 +1,85 @@
+\documentclass[11pt, a4paper]{report}
+
+\usepackage[utf8]{inputenc}
+\usepackage{fancyvrb}
+\usepackage{enumitem}
+
+\begin{document}
+\title{POSIX}
+\author{
+  Carmona Mendoza Mat\'in\\
+  \texttt{313075977}
+}
+\date{05/Febrero/2019}
+\maketitle
+
+POSIX significa Portable Operating System Interface. Consiste en una 
+familia de est\'andares especificadas por la IEEE con el objetivo de facilitar la 
+interoperabilidad de sistemas operativos. Adem\'as, POSIX establece las reglas para la 
+portabilidad de programas. Por ejemplo, cuando se desarrolla software que cumple con 
+los est\'andares POSIX existe una gran probabilidad de que se podr\'a utilizar en sistemas 
+operativos del tipo Unix. Si se ignoran tales reglas, es muy posible que el programa o 
+librer\'ia funcione bien en un sistema dado pero que no lo haga en otro.\\
+
+Unix fue seleccionado como la base para una interfaz de sistema est\'andar en parte porque 
+era "neutral del fabricante". Sin embargo, exist\'ian varias versiones principales de Unix, 
+por lo que era necesario desarrollar un sistema de denominador com\'un. Las especificaciones 
+POSIX para sistemas operativos similares a Unix originalmente consist\'ian en un solo documento 
+para la interfaz de programaci\'on central, pero eventualmente creci\'o a 19 documentos separados 
+(POSIX.1, POSIX.2, etc.). La l\'inea de comandos del usuario estandarizada y la interfaz de 
+secuencias de comandos se basaron en el shell UNIX System V. Muchos programas, servicios y 
+utilidades de nivel de usuario (incluidos awk , echo , ed) también se estandarizaron, junto con 
+los servicios requeridos a nivel de programa (incluyendo I/O b\'asico : archivo , terminal y red ). 
+POSIX tambi\'en define una API de biblioteca de subprocesos est\'andar que es compatible con la 
+mayor\'ia de los sistemas operativos modernos. En 2008, la mayor\'ia de las partes de POSIX se 
+combinaron en un solo est\'andar (IEEE Std 1003.1-2008 , también conocido como POSIX.1-2008).\\
+
+\subsection*{Abstract}
+POSIX define una interfaz incluido un interprete de comandos y programas para soportar la portabilidad 
+en el nivel de c\'odigo fuente. Tiene 4 componentes principales: \\
+
+\begin{enumerate}
+\item T\'erminos generales, conceptos e interfaces comunes a todos los vol\'umenes de este est\'andar.
+\item Definiciones para funciones de servicio del sistema y subrutinas.
+\item Definiciones para una interfaz de nivel de c\'odigo fuente est\'andar para mandar servicios de interpretaci\'on	
+\item Definiciones para una interfaz de nivel de c\'odigo fuente est\'andar para mandar servicios de interpretaci\'on.	
+\end{enumerate}
+
+
+ \subsection*{Keywords}
+ \begin{itemize}
+ \item Interfaz del programa de aplicaci\'on (API). 
+ \item Argumento.
+ \item As\'incrono.
+ \item Expresi\'on regular b\'asica (BRE).
+ \item Expresi\'on regular extendida (ERE).
+ \item Mecanismo de control de acceso a archivos.
+ \item entrada/salida (I/O).
+ \item Interfaz de sistema operativo port\'atil (POSIX®).
+ \item Shell.
+ \item Thread (hilo).
+ \item Int\'erprete de lenguaje de comando.
+ \item Control de trabajo.
+ \item Cadena.
+ \item X/Open System Interface (XSI).
+ \end{itemize}
+ 
+ \subsubsection*{Purpose}
+ 
+ \begin{itemize}
+ \item \textbf{Orientado a la aplicaci\'on}: 
+		El objetivo b\'asico era promover la portabilidad de los programas de aplicaci\'on en todo el sistema UNIX. 
+ \item \textbf{Interfaz, Implementaci\'on no}:
+        POSIX define una interfaz, no una implementaci\'on. No se hace distinci\'on entre
+funciones de biblioteca y llamadas al sistema, ambos se conocen como funciones.
+ \item \textbf{ El lenguaje C}: 
+         Las interfaces del sistema y las definiciones de encabezado est\'an escritas en t\'erminos del est\'andar C.
+ \item \textbf{Sin superusuario, sin administraci\'on del sistema}:
+		​​Las funciones utilizables solo por el superusuario no se han incluido.
+ \end{itemize}
+ 
+\subsection*{Opini\'on}
+
+No sabia de la existencia de estos estandares entonces la mayoria de lo que acabo de leer es nuevo para m\'i. Si sab\'ia algunas cosas como por ejemplo shell, alias, comandos, core file, Network entre otros pocos m\'as (Aunque no a profundidad). Por el tiempo no le\'i gran cosa pero creo que le dedicar\'e tiempo para leer este libro en su mayoria porque creo que es muy importante,ya que sabiendo todo esto podr\'as dominar 
+sistemas operativos compatibles con el estandar en cuesti\'on y adem\'as pasar la materia con facilidad.
+\end{document}
