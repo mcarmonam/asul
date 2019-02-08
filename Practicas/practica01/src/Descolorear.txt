@@ -1,0 +1,15 @@
+#!/bin/bash
+
+alias ls='ls --color=never'
+
+alias grep='grep'
+
+alias diff='diff'
+
+unset LESS_TERMCAP_md
+unset LESS_TERMCAP_me
+unset LESS_TERMCAP_se
+unset LESS_TERMCAP_so
+unset LESS_TERMCAP_ue
+unset LESS_TERMCAP_us
+
