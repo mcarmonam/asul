@@ -1,0 +1,17 @@
+.\" Manpage for logs.
+.\" Contactar lisandro_xp@ciencias.unam.mx para reportar bugs o typos
+.TH man 7 "14 Feb 2019" "1.0" "logs man page"
+.SH NAME
+logs \- Es un programa que regresa informacion especifica a partir de los logs del sistema
+.SH SYNOPSIS
+logs
+.SH DESCRIPTION
+logs regresa veces en las que se durmio la pc desde el día 15 de febrero al 16 de febrero, las veces que se han actualizados los paquetes del sistema y las veces en la que introduje erroneamente una contraseña para un usuario dado.
+.SH OPTIONS
+The nuseradd does not take any options. However, you can supply username.
+.SH SEE ALSO
+grep
+.SH BUGS
+sin bugs.
+.SH AUTHOR
+Rafael Damian, Carmona Martín, Barajas Jose, Vazquez Lisandro
