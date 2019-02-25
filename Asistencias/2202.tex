@@ -1,0 +1,140 @@
+\documentclass[11pt, a4paper]{report}
+
+\usepackage[utf8]{inputenc}
+\usepackage{fancyvrb}
+\usepackage{enumitem}
+\usepackage{hyperref}
+
+\begin{document}
+\title{Clase 19: 22/Febrero/2019}
+\author{
+  Carmona Mendoza Mat\'in\\
+  \texttt{313075977}
+}
+\date{}
+\maketitle
+
+En la clase de hoy continuamos hablando de la carpeta dev que como recordamos
+es el directorio que contiene los ficheros de dispositivo. \\
+
+Los dispositivos están divididos en dos tipos: los dispositivos de carácter y
+los dispositivos de bloque. \\
+
+Los dispositivos de carácter son accedidos secuencialmente, un carácter cada
+vez. Algunos ejemplos de dispositivos de carácter son el ratón, el teclado,
+un terminal de texto, una cinta magnética, nulo, etc. \\
+
+Los dispositivos de bloque se caracterizan por ser de acceso aleatorio, la
+unidad mínima de lectura-escritura no es un carácter, sino un bloque (1KB).
+Algunos ejemplos de dispositivos de carácter son los discos duros, los
+disquetes, los CDROMS, etc. \\
+
+La diferencia es que los dispositivos de bloque tienen un búfer para las
+peticiones, por lo tanto pueden escoger en qué orden las van a responder. Esto
+es importante en el caso de los dispositivos de almacenamiento, donde es más
+rápido leer o escribir sectores que están cerca entre sí, que aquellos que
+están más desperdigados. Otra diferencia es que los dispositivos de bloque
+sólo pueden aceptar bloques de entrada y de salida (cuyo tamaño puede variar
+según el dispositivo), en cambio los dispositivos de carácter pueden usar
+muchos o unos pocos bytes como ellos quieran. La mayoría de los dispositivos
+del mundo son de carácter, porque no necesitan este tipo de buffering, y no
+operan con un tamaño de bloque fijo. Se puede saber cuándo un fichero de
+dispositivo es para un dispositivo de carácter o de bloque mirando el primer
+carácter de la salida de ls -l. Si es `b' entonces es un dispositivo de
+bloque, y si es `c' es un dispositivo de carácter. \\
+
+Hablamos tambien de la carpeta etc teniendo esta los ficheros de configuración,
+scripts de arranque, etc. algunos de los archivos que podemos encontrar aquí
+son los siguientes: \\
+
+\begin{itemize}
+\item /etc/passwd : La base de datos de los usuarios, que incluye campos como
+  el nombre de usuario, nombre real, directorio home, password encriptada y
+  otra información acerca de cada usuario. El formato de este archivo se
+  encuentra documentado en la página de manual del comando passwd. Sin
+  embargo, hoy día es muy común encontrar las contraseñas encriptadas en
+  /etc/shadow. Esto significa que en tal caso, los datos de los usuarios
+  excepto la password encriptada se encontrarían almacenados en passwd.
+\item /etc/fdprm : Tabla de parámetros para los discos flexibles. Describe
+  cómo son los diferentes formatos de estos discos. Este archivo es utilizado
+  por el programa setfdprm. Se puede encontrar información adicional en la
+  página de manual de setfdprm.
+\item /etc/magic : El archivo de configuración para el programa file. Contiene
+  las descripciones de varios formatos de archivos que utiliza file para
+  determinar el tipo de archivo.
+\item /etc/mtab : Contiene un listado de los sistemas de archivos actualmente
+  montados. Se establece Inicialmente por los scripts del arranque del sistema, y se actualiza automáticamente por el comando mount. Se utiliza cuando se
+  necesita un listado de los sistemas de archivos que estén actualmente
+  montados (por ejemplo por el comando df). 
+\end{itemize}
+
+Hablamos del comando fdisk, siendo una  herramienta para crear, eliminar,
+redimensionar, cambiar o copiar y mover particiones usando el sencillo menú
+que ofrece. El límite que existe en esta herramienta está en 4 particiones
+primarias como máximo por disco , y un número de particiones extendidas o
+lógicas que será variable en función del tamaño de nuestro disco duro. \\
+
+Algunas banderas para este comando son: \\
+
+\begin{itemize}
+\item fdisk –l : Para listar todas las particiones existentes en nuestro
+  sistema.
+\item fdisk -l /dev/sdb/ : Para ver todas las particiones de un único disco.
+\item fdisk –s /dev/sdb2 :  Comprobar el tamaño de una partición.    
+\end{itemize}
+
+Vimos también controladores de sistemas de archivos. Mencionando: \\
+
+\begin{itemize}
+\item msdos : El controlador del sistema de archivos msdos no proporciona una
+  semántica de archivos Unix adicional y no es compatible con un nombre de
+  archivo largo. Si se monta un sistema de archivos de disco FAT usando este
+  controlador, solo serán visibles los nombres de archivo 8.3, no se podrá
+  acceder a los nombres de archivo largos, ni se mantendrán estructuras de
+  datos de nombres de archivo de ningún tipo en el volumen del disco. El
+  controlador del sistema de archivos vfat proporciona soporte de nombre de
+  archivo largo utilizando las mismas estructuras de datos de disco que
+  Microsoft Windows usa para soporte de nombre de archivo largo VFAT en
+  volúmenes de formato FAT, pero no admite ninguna semántica de archivo Unix
+  adicional. El controlador del sistema de archivos umsdos proporciona soporte
+  de nombre de archivo largo, y semántica de archivos Unix extra. Sin embargo,
+  lo hace utilizando estructuras de datos en disco que no son reconocidas por
+  ningún controlador de sistema de archivos para ningún sistema operativo que
+  no sea Linux
+\item umsdos : La ventaja clave para umsdos de los tres es que proporciona una
+  semántica completa de archivos Unix. Por lo tanto, se puede usar en
+  situaciones en las que es deseable instalar Linux y ejecutarlo desde un
+  volumen de disco FAT, que requiere dicha semántica para estar disponible.
+  Sin embargo, Linux instalado y ejecutándose desde dicho volumen de disco es
+  más lento que Linux instalado y ejecutándose desde un volumen de disco
+  formateado, por ejemplo, con el formato del sistema de archivos ext2 
+\item vfat : aunque carece de la semántica completa de archivos Unix y no tiene
+  la capacidad de tener Linux instalado y ejecutándose desde un volumen de
+  disco FAT, no tiene las desventajas mencionadas anteriormente de umsdos
+  cuando se trata simplemente de compartir datos en un volumen de disco FAT
+  entre Linux y otros sistemas operativos. sistemas tales como Windows. Sus
+  estructuras de datos son las mismas que las utilizadas por Windows para los
+  nombres de archivo largos de VFAT, y no requiere ejecutar una utilidad de
+  sincronización para evitar que las estructuras de datos de Windows y Linux
+  se separen. Por esta razón, es el controlador de sistema de archivos FAT más
+  apropiado para usar en la mayoría de las situaciones.
+\end{itemize}
+
+
+
+\newpage
+
+\textbf{Bibliografía} \\
+
+\begin{itemize}
+
+\item  \url{https://reynaldo-entrada-salida.es.tl/Dispositivos-de-Bloqueo-y-Car%E1cter.htm}
+
+\item \url{http://www.tldp.org/pub/Linux/docs/ldp-archived/system-admin-guide/translations/es/html/ch04s03.html}
+
+\item \url{https://openwebinars.net/blog/9-comandos-basicos-fdisk-para-gestionar-el-disco-duro/}
+
+\end{itemize}
+
+
+\end{document}
