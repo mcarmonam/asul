@@ -1,0 +1,75 @@
+\documentclass[11pt, a4paper]{report}
+
+\usepackage[utf8]{inputenc}
+\usepackage{fancyvrb}
+\usepackage{enumitem}
+\usepackage{hyperref}
+
+\begin{document}
+\title{Clase 20: 25/Febrero/2019}
+\author{
+  Carmona Mendoza Mat\'in\\
+  \texttt{313075977}
+}
+\date{}
+\maketitle
+
+En la clase de hoy comenzamos a hablar de todos los dispositivos que usan un
+kernel de linux. En realidad yo me imaginaba que Linux tenia un gran impacto
+en la sociedad pero con esta platica observe que sí. \\
+
+Investigué y estos son algunos dispositivos que utilizan Linux:
+
+\begin{itemize}
+\item  2013 Cadillac XTS : este coche emplea un reconocimiento de voz, muchos
+  coches similares aceptan también comandos o direcciones pero este coche es
+  lo suficientemente inteligente para “entender” la orden completa de una
+  dirección al momento. Otra característica que tiene es la integración de
+  búsquedas locales, si te apetece tomar un chocolate caliente, basta con
+  decirlo en voz alta y el sistema te llevará a un lugar donde lo sirvan y
+  todo este sistema esta hecho en Linux. 
+\item Gran colisionador de hadrones : Es el proyecto físico más importante en
+  la historia del universo conocido. Empezó sobre el 2008 y tomó como 20 años
+  construirlo. Este invento de 10 Billones de Dolares funciona con Linux.
+\item Control de tráfico de alta tecnología de San Francisco : El año pasado
+  desarrrollaron un ordenador que cumplía los Estándares de control de
+  transportes (ATC). Linux es usado como el sistema que encaja este sistema,
+  pues se necesita un sistema robusto, expansible y que sea compatible con
+  software de múltiples vendedores.
+\item Calculadora Nspire CAS CX : Es un simple y poderoso dispositivo con
+  arquitectura ARM basada en gráficos funcionando con Linux
+\item Routers inalambricos : Un incontable número de routers wifi de compañias
+  conocidas como Linksys, Asus, Netgear, etc funcionan con Linux.
+\item SmartTV: muchos vemos en los anuncios estos inventos en la televisón, e
+  incluso muchas funcionan con Ubuntu dentro
+\end{itemize}
+
+Despues hablamos de la carpeta etc/default la cual contiene algunos de los
+parámetros que el usuario o administrador es probable que el cambio, más que
+la incorporación de los valores en el real de los scripts de arranque. De esta
+manera, los cambios persisten incluso si usted actualice el paquete y el script
+de inicio se sustituye. \\
+
+En debian, /etc/default/ es un directorio de la mayoría de archivos vacíos. La
+forma en que está destinado a trabajar es que cada /etc/init.d/test script
+primer fuentes /etc/default/test antes de iniciar/detener el servicio de
+prueba. La finalidad del fichero es la de proporcionar más opciones para
+iniciar el servicio, o anular determinados aspectos del servicio de inicio.
+
+
+
+
+\newpage
+
+\textbf{Bibliografía} \\
+
+\begin{itemize}
+
+\item  \url{http://www.nexolinux.com/15-dispositivos-que-funcionan-con-linux/}
+
+\item \url{https://www.enmimaquinafunciona.com/pregunta/48817/cual-es-el-proposito-de-etcdefault}
+
+\end{itemize}
+
+
+\end{document}
