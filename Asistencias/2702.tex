@@ -1,0 +1,166 @@
+\documentclass[11pt, a4paper]{report}
+
+\usepackage[utf8]{inputenc}
+\usepackage{fancyvrb}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{multirow}
+
+\begin{document}
+\title{Clase 22: 27/Febrero/2019}
+\author{
+  Carmona Mendoza Mat\'in\\
+  \texttt{313075977}
+}
+\date{}
+\maketitle
+
+En la clase de hoy hablamos sobre modulos definiendo módulo como
+fragmentos de código, abierto o cerrado, que nosotros podemos añadir o
+quitar del Kernel con el fin de añadir o quitar una funcionalidad. \\
+
+Observamos algunas funcionalidades de los módulos:
+
+\begin{itemize}
+\item Usar los drivers privativos de nuestra tarjeta gráfica.
+\item Registrar las temperaturas de componentes de nuestro ordenador.
+\item Que los ventiladores de nuestro ordenador sean gestionados por el
+  software creado por el fabricante de nuestro ordenador.
+\item Hacer funcionar nuestro tarjeta de red wifi.
+\end{itemize}
+
+Entonces básicamente los módulos del kernel nos permiten hacer funcionar
+nuestro hardware, o en el caso que ya funcione podemos hacer que lo haga
+de forma más eficiente. \\
+
+Los módulos del kernel son archivos terminados con la extensión .ko que
+se almacenan en la ubicación /lib/modules/versión\_del\_kernel. \\
+
+Por lo tanto ejecutando el siguiente comando en la terminal podemos
+averiguar la totalidad de módulos que tenemos disponibles. \\
+
+ls -R /lib/modules/\$(uname -r) \\
+
+Para obtener una lista de la totalidad de módulos del kernel que estamos
+usando tenemos que ejecutar el siguiente comando en la terminal: \\
+
+lsmod \\
+
+Este comando nos mostrará la siguiente información:
+
+\begin{table}[htbp]
+\begin{center}
+\begin{tabular}{|l|l|}
+\hline
+Campo & Información mostrada \\
+\hline \hline
+Module & Los nombres de los módulos que están activos. \\ \hline
+Size & El tamaño que ocupa cada uno de los módulos cargados en la
+memoria
+\\ \hline
+Used & Indica si un módulo está siendo usado por otros módulos \\ \hline
+\end{tabular}
+\end{center}
+\end{table} 
+
+\textbf{Cargar un módulo con sus dependencias} \\
+
+Cargar un módulo en el kernel conjuntamente con sus dependencias es muy
+sencillo. Pongamos el caso que queremos cargar el módulo vfat.\\
+
+El primer paso a realizar es comprobar si el módulo está cargado. Para
+ello ejecutamos el comando lsmod | grep seguido del nombre del módulo:\\
+
+lsmod | grep vfat \\
+
+Si el comando no nos proporciona ningún resultado quiere decir que el
+módulo no está cargado y por lo tanto lo podemos cargar sin problema
+alguno. \\
+
+Seguidamente actualizamos la base de datos de dependencias de módulos
+ejecutando el siguiente comando en la terminal: \\
+
+sudo depmod \\
+
+Finalmente cargamos el módulo ejecutando el comando sudo modprobe seguido
+del nombre del módulo: \\
+
+sudo modprobe -v vfat \\
+
+Al ejecutar el comando se cargará el módulo vfat juntamente con todas sus
+dependencias en el kernel de nuestro equipo. \\
+
+Como hemos visto anteriormente hay módulos que permiten introducir
+parámetros de configuración cuando los cargamos. Para conocer los
+parámetros que se pueden usar consulten el apartado obtener información
+de los módulos del kernel. \\
+
+Modprobe tiene multitud de opciones para su ejecución. Para obtener
+información adicional sobre este comando abran una terminal y ejecuten
+el comando man modprobe.\\
+\\
+\textbf{Deshabilitar un módulo junto con sus dependencias} \\
+
+Si después de cargar el módulo vfat nos arrepentimos y queremos
+deshabilitarlo tenemos que seguir los siguientes pasos: \\
+
+En la terminal ejecutamos el comando sudo modprobe -rv seguido del nombre
+del módulo que queremos descargar. Por lo tanto para descargar el módulo
+vfat ejecutamos el siguiente comando en la terminal: \\
+
+sudo modprobe -rv vfat \\
+
+Al ejecutar este comando se descargará el módulo vfat y todas sus
+dependencias del Kernel.
+\\
+\textbf{Lista negra} \\
+
+Puede darse el caso que existan 2 módulos activos realizando la misma
+función y esto puede generar conflictos. \\
+
+Un caso típico y conocido es tener activados los drivers privativos de
+nvidia conjuntamente con los libres. \\
+
+Para solucionar este punto disponemos de 2 soluciones: \\
+
+Descargar uno de los 2 módulos. Para ello hay que seguir las
+instrucciones descritas en el apartado anterior. \\
+
+Poner a la lista negra uno de los 2 módulos. De esta forma el módulo que
+está en la lista negra no se cargará nunca. \\
+
+Para aplicar la segunda solución abrimos una terminal y ejecutamos el
+siguiente comando: \\
+
+sudo nano /etc/modprobe.d/blacklist.conf \\
+
+Una vez se abra el editor de textos escribiremos el text blacklist
+seguido del nombre del módulo a bloquear. Por lo tanto para poner el
+módulo nouveau a la lista negra escribimos:\\
+
+blacklist nouveau \\
+
+A continuación guardamos los cambios y cerramos el fichero. Si ninguno de
+los módulos activos depende de nouveau, la próxima vez que arranquemos el
+ordenador no se cargará el módulo nouveau. \\
+
+Si queremos bloquear de forma absoluta el módulo nouveau podemos
+sustituir el comando blacklist nouveau por: \\
+
+install nouveau /bin/false
+
+
+
+
+\newpage
+
+\textbf{Bibliografía} \\
+
+\begin{itemize}
+
+\item  \url{https://geekland.eu/gestionar-modulos-del-kernel-linux/}
+
+\end{itemize}
+
+
+\end{document}
