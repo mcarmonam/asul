@@ -1,0 +1,115 @@
+\documentclass[11pt, a4paper]{report}
+
+\usepackage[utf8]{inputenc}
+\usepackage{fancyvrb}
+\usepackage{enumitem}
+\usepackage{hyperref}
+
+\begin{document}
+\title{Clase 21: 26/Febrero/2019}
+\author{
+  Carmona Mendoza Mat\'in\\
+  \texttt{313075977}
+}
+\date{}
+\maketitle
+
+En la clase de hoy con el profesor continuamos hablando de directorios hablamos
+de la carpeta /etc/default/grub que contiene la siguiente información:
+
+\begin{itemize}
+\item GRUB\_DEFAULT = 0 : Con la opción 0 hacemos que se seleccione por defecto
+  la primera entrada (sistema), con la opción 1, la segunda… así sucesivamente.
+  Si en cambio ponemos saved, hacemos que siempre se seleccione el último
+  sistema al que se accedió.
+\item \#GRUB\_HIDDEN\_TIMEOUT=0 : Si descomentamos esta línea (quitamos la
+  almohadilla o hash, \#), oculta el menú de entradas del GRUB. Si ponemos un
+  tiempo mas alto lo que hace es esconder el menú, pero esperarse un tiempo
+  hasta continuar. Si en cambio comentamos la línea (añadimos un \#), mostrará
+  el menú de entradas del GRUB.
+\item GRUB\_HIDDEN\_MENU\_QUIET = true/false : Si está a “true” oculta la
+  cuenta atrás , mientras que si está a “false” muestra la cuenta atrás
+  (aparecerá en la zona inferior de la pantalla).
+\item GRUB\_TIMEOUT = 90 : Esta línea indica el tiempo de espera (en segundos)
+  hasta iniciar el sistema que tenemos como DEFAULT. Con un valor de -1, se
+  desactiva la cuenta atrás y el valor será infinito.
+\item GRUB\_CMDLINE\_LINUX\_DEFAULT = ”quiet splash acpi\_osi = Linux” : En esta
+  línea, la opción quiet agrupa las entradas iguales, con splash, tras elegir
+  el sistema, se muestra la imagen de carga en vez de los mensajes del kernel
+  (la típica pantalla negra con letras blancas donde se muestra el proceso de
+  encendido y comprobación de las particiones de los discos duros). La tercera
+  opción, acpi\_osi=Linux puede arreglar varios problemas de hardware en nuestro
+  sistema Linux, como por ejemplo el brillo, tal y como explico en este otro
+  post.
+\item \#GRUB\_GFXMODE = 640x480 : Esta línea permite cambiar la resolución del
+  GRUB. Si se descomenta la línea, se aplica la resolución que pongamos en la
+  línea. Para saber las resoluciones soportadas por nuestro GRUB, debemos poner
+  vbeinfo en la línea de comandos del GRUB (pulsar c para acceder a ella). Eso
+  sí, solo se pueden utilizar resoluciones permitidas por nuestra tarjeta
+  gráfica. Lo más normal es poner el valor “auto” tras el igual.
+\item \#GRUB\_DISABLE\_LINUX\_RECOVERY = ”true” : Al descomentar esta línea, no
+  aparezcerá la opción de recovery mode de los sistemas Linux en el menú.
+\end{itemize}
+
+Después hablamos del archivo profile.d que en pocas palabras es un documento
+que contiene la configuración del entorno (rutas, variables de entorno,
+aliases, etc) \\
+
+Hablamos también de algo que me pareció muy importante, algo llamado keylogger,
+siendo un tipo de software o un dispositivo hardware específico que se encarga
+de registrar las pulsaciones que se realizan en el teclado, para posteriormente
+memorizarlas en un fichero o enviarlas a través de internet. \\
+
+Hay dos tipos de keyloggers:
+
+\begin{itemize}
+\item Keylogger con Hardware
+  \begin{itemize}
+  \item Adaptadores : en línea que se intercalan en la conexión del
+    teclado, tienen la ventaja de poder ser instalados inmediatamente.
+    Sin embargo, mientras que pueden ser eventualmente inadvertidos se
+    detectan fácilmente con una revisión visual detallada
+  \item Dispositivos : que se pueden instalar dentro de los teclados
+    estándares, requiere de habilidad para soldar y de tener acceso al
+    teclado que se modificará. No son detectables a menos que se abra el
+    cuerpo del teclado.
+  \end{itemize}
+\item Keylogger con Software
+  \begin{itemize}
+  \item Basado en núcleo: este método es el más difícil de escribir, y
+    también de combatir. Tales keyloggers residen en el nivel del núcleo
+    y son así prácticamente invisibles. Derriban el núcleo del sistema
+    operativo y tienen casi siempre el acceso autorizado al hardware que
+    los hace de gran alcance. Un keylogger que usa este método puede
+    actuar como driver del teclado por ejemplo, y accede así a cualquier
+    información registrada en el teclado mientras que va al sistema
+    operativo.
+  \item Enganchados: estos keyloggers registran las pulsaciones de las
+    teclas del teclado con las funciones proporcionadas por el sistema
+    operativo. El sistema operativo activa el keylogger en cualquier
+    momento en que se presione una tecla, y realiza el registro.
+  \item Métodos creativos: aquí el programador utiliza funciones como
+    GetAsyncKeyState, GetForegroundWindow, etc. Estos son los más fáciles
+    de escribir, pero como requieren la revisión del estado de cada tecla
+    varias veces por segundo, pueden causar un aumento sensible en uso de
+    la CPU y pueden ocasionalmente dejar escapar algunas pulsaciones del
+    teclado.
+
+  \end{itemize}
+  
+\end{itemize}
+
+\newpage
+
+\textbf{Bibliografía} \\
+
+\begin{itemize}
+
+\item  \url{http://linuxenandalu.com/2013/01/22/editar-el-menu-de-arranque-grub2/}
+
+\item \url{https://es.wikipedia.org/wiki/Keylogger}
+
+\end{itemize}
+
+
+\end{document}
