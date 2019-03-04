@@ -1,0 +1,122 @@
+\documentclass[11pt, a4paper]{report}
+
+\usepackage[utf8]{inputenc}
+\usepackage{fancyvrb}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{multirow}
+
+\begin{document}
+\title{Clase 23: 01/Marzo/2019}
+\author{
+  Carmona Mendoza Mat\'in\\
+  \texttt{313075977}
+}
+\date{}
+\maketitle
+
+En la clase de hoy hablamos sobre Xorg siendo un servidor X con todas las
+funciones que fue diseñado originalmente para sistemas operativos UNIX y
+similares a UNIX que se ejecutan en hardware Intel x86. Ahora se ejecuta en una
+amplia gama de plataformas de hardware y sistemas operativos. \\
+
+Xorg opera bajo una amplia gama de sistemas operativos y plataformas de
+hardware. La arquitectura Intel x86 (IA32) es la plataforma de hardware más
+ampliamente admitida. Otras plataformas de hardware incluyen Compaq Alpha,
+Intel IA64, SPARC y PowerPC. Los sistemas operativos más soportados son los
+sistemas gratuitos / OpenSource como UNIX, como Linux, FreeBSD, NetBSD y
+OpenBSD. Los sistemas operativos comerciales UNIX como Solaris (x86) y UnixWare
+también son compatibles. Otros sistemas operativos compatibles incluyen LynxOS
+y GNU Hurd. Darwin y Mac OS X son compatibles con el servidor XDarwin (1) X.
+Win32 / Cygwin es compatible con el servidor XWin X. \\
+
+Xorg soporta conexiones hechas usando los siguientes flujos de bytes confiables:
+
+\begin{itemize}
+\item Local : En la mayoría de las plataformas, el tipo de conexión "Local" es
+  un socket de dominio UNIX. En algunas plataformas del Sistema V, los tipos de
+  conexión "locales" también incluyen tuberías STREAMS, tuberías con nombre y
+  algunos otros mecanismos.
+\item TCP / IP : Xorg escucha en el puerto 6000+ n , donde n es el número de
+  pantalla. Este tipo de conexión se puede desactivar con la opción -nolisten
+  (consulte la página de manual de Xserver (1) para obtener más información).
+\end{itemize}
+
+Xorg admite varios mecanismos para suministrar / obtener parámetros de configuración y tiempo de ejecución:
+
+\begin{itemize}
+\item vt XX : XX especifica el número de dispositivo del terminal virtual que
+  Xorg utilizará. Sin esta opción, Xorg elegirá la primera Terminal virtual
+  disponible que pueda localizar. Esta opción se aplica solo a plataformas como
+  Linux, BSD, SVR3 y SVR4, que tienen soporte de terminal virtual.
+\item pixmap24 : Configure el formato de mapa de píxeles interno para 24
+  píxeles de profundidad a 24 bits por píxel. El valor predeterminado suele ser
+  de 32 bits por píxel. Normalmente hay pocas razones para usar esta opción. A
+  algunas aplicaciones cliente no les gusta este formato de mapa de píxeles,
+  aunque es un formato perfectamente legal. Esto es equivalente a la opción de
+  archivo xx.conf (5x) de Pixmap.
+\item lasilk : Desactiva el soporte de Silken Mouse.
+\item flipPixels : Intercambia los valores predeterminados por los píxeles en
+  blanco y negro.
+\item fbbpp n : Establece el número de bits de framebuffer por píxel. Solo
+  debes configurar esto si estás seguro de que es necesario; normalmente el
+  servidor puede deducir el valor correcto de -depth anterior. Útil si desea
+  ejecutar una configuración de profundidad 24 con un framebuffer de 24 bpp en
+  lugar del (probablemente predeterminado) 32 bpp framebuffer (o viceversa).
+  Los valores legales son 1, 8, 16, 24, 32. No todos los controladores admiten
+  todos los valores.
+\item bgamma valor : Establecer la corrección de gamma azul. el valor debe
+  estar entre 0.1 y 10. El valor predeterminado es 1.0. No todos los
+  controladores soportan esto. Consulte también las opciones -gamma , -rgamma
+  y -ggamma .
+\end{itemize}
+
+Después hablamos de Autotools siendo es un conjunto de herramientas producido
+por el proyecto GNU. Estas herramientas están diseñadas para ayudar a crear
+paquetes de código fuente portable a varios sistemas Unix. El GNU Build System
+forma parte de la cadena de herramientas de GNU y se usa mucho para desarrollar
+software libre. Aunque las herramientas que contiene el GNU Build System son
+GPL no existe ninguna restricción para crear software portable no libre con él. \\
+
+Autoconf procesa los archivos
+configure.in o configure.ac (aunque se recomienda
+usar configure.ac1​). Cuando ejecuta el script de configuración también puede
+procesar otros archivos como Makefile.in para producir como salida un archivo
+Makefile. \\
+
+Autoconf se usa para intentar salvar las diferencias que existen entre
+distintos tipos de Unix. Por ejemplo, algunos sistemas Unix pueden tener
+funcionalidades que no existen o no funcionan en otros sistemas. Autoconf puede
+detectar ese problema y busca la forma de solucionarlo. La salida de Autoconf
+es un script denominado configure. Autoconf incluye la herramienta Autoheader
+que se usa para manejar los archivos de cabecera de C. \\
+
+También se mencionó el protocolo Wayland que es un protocolo de servidor
+gráfico y una biblioteca para GNU/Linux que implementa este protocolo. \\​
+
+Wayland proporciona un método para que los gestores de composición de ventanas
+se comuniquen directamente con las aplicaciones y el hardware de vídeo. Se
+espera que también sea posible la comunicación con hardware de entrada usando
+otras bibliotecas. Las aplicaciones renderizan los gráficos en sus propios
+buffers y el gestor de ventanas se convierte en el servidor gráfico, haciendo
+una composición con esos buffers para formar la visualización en pantalla de
+las ventanas de las aplicaciones. Este es un enfoque más simple y más eficiente
+que usar un gestor de composición de ventanas con el X Window System. \\
+
+Los gestores de composición de ventanas existentes, como KWin y Mutter, se
+espera que implementen soporte para Wayland de forma directa, para convertirse
+en compositores Wayland/servidores gráficos.
+
+\newpage
+
+\textbf{Bibliografía} \\
+
+\begin{itemize}
+
+\item  \url{https://wiki.archlinux.org/index.php/xorg}
+\item  \url{https://askubuntu.com/questions/430706/installing-autotools-autoconf}  
+\item  \url{https://wayland.freedesktop.org}
+\end{itemize}
+
+
+\end{document}
