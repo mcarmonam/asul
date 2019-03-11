@@ -1,0 +1,128 @@
+\documentclass[11pt, a4paper]{report}
+
+\usepackage[utf8]{inputenc}
+\usepackage{fancyvrb}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{multirow}
+
+\begin{document}
+\title{Clase 28: 07/Marzo/2019}
+\author{
+  Carmona Mendoza Mat\'in\\
+  \texttt{313075977}
+}
+\date{}
+\maketitle
+
+En la clase de hoy vimos los compresores de archivos mencionando algunos de
+ellos así como sus carácteristicas.
+
+La compresión pretende, en principio, transferir o almacenar la misma
+información empleando la menor cantidad de espacio. Esto permite ahorrar
+espacio de almacenamiento y disminuir el tiempo en la transferencia de datos. \\
+
+Una compresión puede ser con pérdida de información/calidad (generalmente para
+las imágenes y sonidos), o sin pérdida de información (para archivos o
+información que no debe ser degradada, como documentos de texto). Ver
+compresión con pérdida de datos y compresión sin pérdida de datos. \\
+
+La compresión de uno o más ficheros en paquetes (zip, rar, pak, arj, etc.) no
+solo suele resultar en un ahorro de espacio en disco, sino que mejora la
+portabilidad de múltiples archivos. Al descomprimirse estos paquetes, se
+obtiene exactamente la misma información que la original. Además los paquetes
+pueden partirse en distintos volúmenes.\\
+
+La compresión con pérdida de datos hace referencia a otro tipo de compresión utilizado generalmente para reducir el tamaño de videos, música e imágenes. En esta compresión se elimina cierta cantidad de información básica de la original, pero, en general, esa eliminación de datos es tolerable o casi imperceptible al ojo o al oído humano. \\
+
+Tanto con pérdida de datos o sin pérdida, la información se comprime a través
+de un compresor. \\
+
+Para la compresión de datos se utilizan complejos algoritmos para descubrir
+redundancia de datos, datos similares entre sí, etc. Algunos algoritmos
+conocidos de compresión son el RLE, Huffman, LZW, etc. \\
+
+Algunos compresores son:
+
+\begin{itemize}
+\item WinZip
+\item WinRar
+\item WinAce
+\end{itemize}
+
+En clase también hablamos sobre direcciones ipv4 e ipv6. \\
+
+Una dirección IP es como un número telefónico o una dirección de una calle.
+Cuando te conectas a Internet, tu dispositivo (computadora, teléfono celular,
+tableta) es asignado con una dirección IP, así como también cada sitio que
+visites tiene una dirección IP. El sistema de direccionamiento que hemos usado
+desde que nació Internet es llamado IPv4, y el nuevo sistema de
+direccionamiento es llamado IPv6. La razón por la cual tenemos que reemplazar
+el sistema IPv4 (y en última instancia opacarlo) con el IPv6 es porque Internet
+se está quedando sin espacio de direcciones IPv4, e IPv6 provee una
+exponencialmente larga cantidad de direcciones IP... Veamos los números:
+
+\begin{itemize}  
+\item Total de espacio IPv4: 4,294,967,296 direcciones.
+\item Total de espacio IPv6: 340,282,366,920,938,463,463,374,607,431,768,211,456 direcciones.
+\end{itemize}
+
+Incluso diciendo que IPv6 es "exponencialemente largo" realmente no se compara
+en diferencia de tamaños. \\
+\\
+\textbf{Direcciones IPv4} \\
+
+Para entender el por que el espacio de direcciones IPv4 es limitado a 4.3 mil
+millones de direcciones, podemos descomponer una dirección IPv4. Una dirección
+IPv4 es un número de 32 bits formado por cuatro octetos (números de 8 bits) en
+una notación decimal, separados por puntos. Un bit puede ser tanto un 1 como un
+0 (2 posibilidades), por lo tanto la notación decimal de un octeto tendría 2
+elevado a la 8va potencia de distintas posibilidades (256 de ellas para ser
+exactos). Ya que nosotros empezamos a contar desde el 0, los posibles valores
+de un octeto en una dirección IP van de 0 a 255. \\
+
+Ejemplos de direcciones IPv4: 192.168.0.1, 66.228.118.51, 173.194.33.16 \\
+
+Si una dirección IPv4 está hecha de cuatro secciones con 256 posibilidades en
+cada sección, para encontrar el número de total de direcciones IPv4, solo debes
+de multiplicar 256*256*256*256 para encontrar como resultado 4,294,967,296
+direcciones. Para ponerlo de otra forma, tenemos 32 bits entonces, 2 elevado a
+la 32va potencia te dará el mismo número obtenido. \\
+\\
+\textbf{Direcciones IPv6} \\
+
+Las direcciones IPv6 están basadas en 128 bits. Usando la misma matemática
+anterior, nosotros tenemos 2 elevado a la 128va potencia para encontrar el
+total de direcciones IPv6 totales, mismo que se mencionó anteriormente. Ya que
+el espacio en IPv6 es mucho mas extenso que el IPv4 sería muy difícil definir
+el espacio con notación decimal... se tendría 2 elevado a la 32va potencia en
+cada sección.
+
+Para permitir el uso de esa gran cantidad de direcciones IPv6 más fácilmente,
+IPv6 está compuesto por ocho secciones de 16 bits, separadas por dos puntos
+(:). Ya que cada sección es de 16 bits, tenemos 2 elevado a la 16 de
+variaciones (las cuales son 65,536 distintas posibilidades). Usando números
+decimales de 0 a 65,535, tendríamos representada una dirección bastante larga,
+y para facilitarlo es que las direcciones IPv6 están expresadas con notación
+hexadecimal (16 diferentes caracteres: 0-9 y a-f). \\
+
+Ejemplo de una dirección IPv6: 2607 : f0d0 : 4545 : 3 : 200 : f8ff : fe21 : 67cf
+\\
+
+que sigue siendo una expresión muy larga pero es mas manejable que hacerlo con
+alternativas decimales.
+
+
+
+\newpage
+
+\textbf{Bibliografía} \\
+
+\begin{itemize}
+
+\item \url{http://wwwcompriar.blogspot.com}
+\item \url{http://ipv6.mx/index.php/component/content/article/189-ipv4-vs-ipv6-icual-es-la-diferencia}
+\end{itemize}
+
+
+\end{document}
