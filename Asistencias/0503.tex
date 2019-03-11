@@ -1,0 +1,59 @@
+\documentclass[11pt, a4paper]{report}
+
+\usepackage[utf8]{inputenc}
+\usepackage{fancyvrb}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{multirow}
+
+\begin{document}
+\title{Clase 25: 05/Marzo/2019}
+\author{
+  Carmona Mendoza Mat\'in\\
+  \texttt{313075977}
+}
+\date{}
+\maketitle
+
+En esta clase comenzamos a hablar sobre la instalación de Debian por red
+desde una imagen pequeña.
+
+Un CD de instalación por red o netinst es un único CD que posibilita que
+instale el sistema completo. Este único CD contiene sólo la mínima
+cantidad de software para comenzar la instalación y obtener el resto de
+paquetes a través de Internet.
+
+¿Qué es lo mejor para mí: el CD mínimo arrancable o los CDs completos?
+Depende, pero pensamos que en muchos casos la imagen del CD mínimo es lo
+mejor: sobre todo, sólo tiene que descargar los paquetes que seleccionó
+para instalarlos en su máquina, lo que ahorra tanto tiempo como ancho de
+banda. Por otro lado, los CDs completos son más recomendables cuando
+tiene que instalar en más de una máquina, o en máquinas sin una conexión
+libre a Internet.
+
+¿Qué tipo de conexiones de red se pueden usar durante la instalación? La
+instalación por red asume que usted cuenta con conexión a Internet. Puede
+ser de varias maneras: con una conexión analógica PPP, ethernet, red
+inalámbrica (con algunas restricciones), pero no por RDSI (¡lo sentimos!).
+
+Lo primero en hacer fue desgargar la imagen pequeña de Debian en la
+página oficial y montar la imagen de la siguiente manera. \\
+
+mount -o loop debian-9.8.0-amd64-netinst.iso /mnt/ \\
+
+Procediendo copiando los archivos initrd.gz y vmlinuz de la carpeta
+install.amd a nuestra carpeta /boot/. \\
+
+Después de eso reiniciamos la computadora entrando a GRUB.
+
+\newpage
+
+\textbf{Bibliografía} \\
+
+\begin{itemize}
+
+\item  \url{https://www.debian.org/CD/netinst/}
+\end{itemize}
+
+
+\end{document}
