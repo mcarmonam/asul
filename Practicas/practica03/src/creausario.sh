@@ -11,8 +11,8 @@ echo -e  "${CYAN}Ingrese el nombre del usuario${NC}"
 read new_user
 while [ $(grep "${new_user}:/" /etc/passwd | wc -l)  != 0 ]
 do
-echo "Ingrese otro usuario, $new_user ya existe"
-read new_user
+    echo "Ingrese otro usuario, $new_user ya existe"
+    read new_user
 done
 
 echo -e "${CYAN}ingrese contraseña${NC}"
