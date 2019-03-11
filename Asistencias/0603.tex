@@ -1,0 +1,84 @@
+\documentclass[11pt, a4paper]{report}
+
+\usepackage[utf8]{inputenc}
+\usepackage{fancyvrb}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{multirow}
+
+\begin{document}
+\title{Clase 27: 06/Marzo/2019}
+\author{
+  Carmona Mendoza Mat\'in\\
+  \texttt{313075977}
+}
+\date{}
+\maketitle
+
+En la clase de hoy continuamos con lo que habíamos dejado pendiente, continuar
+con la instalación de Debian con la imagen pequeña. El profesor nos dijo que lo
+que habíamos hecho la clase pasada estaba mal, es decir descargamos archivos
+diferentes. Entonces descargamos la mini.iso de arranque por red de Debian e
+hicimos los mismo pasos de la clase pasada.  \\
+
+\textbf{Tipos de arranque por red PXE.} \\
+
+\begin{itemize}
+\item Modalidad Kernel (sólo BIOS) : Durante el arranque, el programa de
+  precarga inicia automáticamente un kernel de despliegue del SO en el destino
+  para descargar e instalar el sistema operativo Windows o Linux según la
+  información almacenada en la base de datos del Servidor de despliegue de
+  sistema operativo. Este kernel es una mini sistema operativo que establece
+  contacto con el Servidor de despliegue de sistema operativo y ejecuta el
+  despliegue en la máquina de destino. La ventaja de utilizar este tipo de
+  arranque es que la descarga del motor de despliegue es más rápida que la
+  descarga del mismo en la modalidad sin kernel.
+\item Modalidad sin kernel (BIOS) : Durante el arranque, el programa de
+  precarga inicia automáticamente la herramienta de Linux PXE en el destino
+  para descargar e instalar el sistema operativo Windows o Linux según la
+  información almacenada en la base de datos del Servidor de despliegue de
+  sistema operativo. Esta herramienta, que forma parte de la suite SysLinux,
+  permite que el kernel de Windows o Linux se inicie sin utilizar ningún
+  programa del Servidor de despliegue de sistema operativo. 
+\item Modalidad sin kernel (UEFI) : Durante el arranque, el programa de
+  precarga inicia automáticamente la herramienta conmutador (switcher) de UEFI
+  en el destino para descargar e instalar el sistema operativo Windows según la
+  información almacenada en la base de datos del Servidor de despliegue de
+  sistema operativo. Esta herramienta permite a Windows iniciarse sin utilizar
+  ningún programa del Servidor de despliegue de sistema operativo.  
+\end{itemize}
+
+Repetimos los mismos pasos que la clase pasado, entonces entando en el grub
+vimos los siguientes comandos.
+
+\begin{itemize}
+\item boot : Arranca el sistema operativo o gestor de encadenamiento que se ha
+  cargado.
+\item chainloader </ruta/a/archivo> : Carga el archivo especificado como gestor
+  de encadenamiento. Si el archivo está ubicado en el primer sector de la
+  partición especificada, puede utilizar la notación de lista de bloques, +1,
+  en vez del nombre del archivo.
+\item displaymem : Muestra el uso actual de memoria, en función de la
+  información de la BIOS. Esto es útil si no está seguro de la cantidad de RAM
+  que tiene un sistema y todavía tiene que arrancarlo.
+\item initrd </ruta/a/initrd> : Le permite especificar un disco RAM inicial
+  para utilizarlo al arrancar. Es necesario un initrd cuando el kernel necesita
+  ciertos módulos para poder arrancar adecuadamente, tales como cuando la
+  partición se formatea con el sistema de archivos ext3.
+\item root (<tipo-dispositivo><numero-dispositivo>,<particion>) : Configura la
+  partición raíz para GRUB, tal como (hd0,0) y monta la partición.
+\end{itemize}
+
+\newpage
+
+\textbf{Bibliografía} \\
+
+\begin{itemize}
+
+\item  \url{https://www.debian.org/CD/netinst/}
+\item \url{https://www.ibm.com/support/knowledgecenter/es/SS3HLM_7.1.1.16/com.ibm.tivoli.tpm.osd.doc_7.1.1.16/deploy/cosd_kernelfree.htm}
+\item \url{https://web.mit.edu/rhel-doc/4/RH-DOCS/rhel-rg-es-4/s1-grub-commands.html}
+\end{itemize}
+
+
+\end{document}
