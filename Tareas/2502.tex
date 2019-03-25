@@ -1,0 +1,92 @@
+\documentclass[11pt, a4paper]{report}
+
+\usepackage[utf8]{inputenc}
+\usepackage{fancyvrb}
+\usepackage{enumitem}
+\usepackage{hyperref}
+
+\begin{document}
+\title{El debate de Tanenbaum-Torvalds}
+\author{
+  Carmona Mendoza Mat\'in\\
+  \texttt{313075977}
+}
+\date{}
+\maketitle
+
+Andrew Stuart Andy Tanenbaum nacido el 16 de marzo de 1944 y conocido como ast
+o papa Tanenbaum, es profesor de ciencias de la computación. \\
+
+Tanenbaum es más conocido por ser el creador de Minix, una réplica gratuita del
+sistema operativo UNIX con propósitos educativos, y por sus libros sobre
+ciencias de la computación.\\
+
+Por otra parte Linus Benedict Torvalds es un ingeniero de software finlandés;
+conocido por iniciar y mantener el desarrollo del "kernel" Linux, basándose en
+el sistema operativo libre Minix creado por Andrew S. Tanenbaum y en algunas
+herramientas, los compiladores y un número de utilidades desarrollados por el
+proyecto GNU.\\
+
+En el año de 1992 estas dos celebridades tuvieron un gran debate, cabe
+mencionar que otras celebridades tales como Peter Mc Donald y David S. Miller
+también participaron.\\
+
+El debate se produjo en un foro de discusión de Usenet, comp.os.Minix. En él,
+Tanenbaum explica que los sistemas operativos de tipo micronúcleo (como Minix)
+son mejores que los de tipo monolíticos (como Linux).\\
+
+Todo empezó porque en 1991 Linus Torvalds, publicó un mensaje que decía algo
+como:
+"Hola a todos por ahí usando minix – Estoy haciendo un sistema operativo
+(libre) (sólo un pasatiempo, no será grande y profesional como gnu) para clones
+386(486). Esto está en funcionamiento desde abril y está comenzando a quedar
+listo. Me gustaría algún comentario sobre cosas que ames/odies en minix, ya que
+mi sistema operativo se parece un poco (el mismo diseño de la capa física del
+sistema de archivos (por razones prácticas) entre otras cosas). Actualmente he
+portado bash (1.08) y gcc (1.40), y las cosas parecen funcionar. Esto implica
+que llegaré a algo práctico dentro de unos pocos meses, y quisiera saber qué
+características desearía la mayoría de la gente. Cualquier sugerencia es
+bienvenida, pero no prometo que pueda aplicarlas." \\
+
+El foro al que envió ese mensaje era para discusiones sobre el sistema
+operativo Minix, creado por el profesor Tanenbaum y su grupo. A inicios de
+1992, cuando vio que las discusiones sobre Linux habían sobrepasado las
+relativas a Minix, Tanenbaum decidió intervenir. Fue así que el 29 de enero
+envió al foro un mensaje con el título "Linux es obsoleto”. Con un título como
+ése, Linus no podía quedarse callado…\\
+
+Tanenbaum afirmaba que los sistemas operativos monolíticos eran un paso atrás
+en la computación; aumentaban la complejidad y disminuían su portabilidad, y
+que Linux estaba demasiado orientado a la arquitectura x86. Linux reconoció que
+la arquitectura micronúcleo era teóricamente superior. No obstante, argumentó
+que Minix tenía errores básicos para un sistema operativo y que, debido a la
+interfaz de aplicaciones de Linux, su sistema operativo era más portable que
+Minix.\\
+
+\section*{Opinión}
+
+Al termino de la lectura del debate me surgieron algunas dudas la más
+importante, creo, era en que consiste un sistema operativo micronúcleo y uno
+monolitico (No he llevado operativos aun jeje). Por lo que investigué y noté que
+la diferencia principal entre los micronúcleo y monoliticos es que los primeros
+implementan las funcionalidades del núcleo con llamadas de sistema que se
+ejecutan en como procesos servidores en espacio de usuario. Por lo tanto, las
+distintas funcionalidades son separadas y son estos servidores los que las
+proveen cuando son pedidas. En cambio, un núcleo monolítico implementa todas
+estas funcionalidades él sólo, por lo que su complejidad se ve incrementada.\\
+
+En lo personal pienso que la razón la tuvo Linus, ya que x86 sigue siendo, con una amplia mayoría, la arquitectura más usada en ordenadores personales. Además, en la actualidad Linux ha sido portado a muchas otras arquitecturas como MIPS, ARM, SPARC o PowerPC.
+
+
+
+\newpage
+
+\textbf{Bibliografía} \\
+
+\begin{itemize}
+
+\item \url{https://smaldone.com.ar/documentos/libros/opensources.pdf?fbclid=IwAR05n9RArmsgx3k6gxo2pTtzbIw6pUGr2QM5alJpoiTjdZx8Lx8vsZsksEk}
+  
+\end{itemize}
+
+\end{document}
