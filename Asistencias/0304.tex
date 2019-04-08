@@ -1,0 +1,112 @@
+\documentclass[11pt, a4paper]{report}
+
+\usepackage[utf8]{inputenc}
+\usepackage{fancyvrb}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{multirow}
+\usepackage{graphicx}
+
+\begin{document}
+\title{Clase 45: 03/Abril/2019}
+\author{
+  Carmona Mendoza Mat\'in\\
+  \texttt{313075977}
+}
+\date{}
+\maketitle
+
+Este era el último día para terminar el examen: \\
+
+Despues de lo que hicimos el día de ayer lanzamos una terminal en el entorno de instalación aquí nos dimos cuenta de que en modo rescate la partición root se
+monta en el directorio target, ya que con esta terminal si podiamos usar el
+comando ls nos dimos cuenta de que hacía falta el binario correspondiente a ls
+en el directorio /bin por lo que copiamos el binario directamente de la ISO. \\
+
+Una vez con pudimos usar el comando ls las cosas fueron más faciles, lo
+primero que hicimos fue revisar los archivos importantes para el booteo
+fstab, grub.cfg, etc. Al listar el contenido del directorio /etc
+notamos que el archivo fstab tenía otro nombre por lo que lo corregimos,
+ademas al abrirlo notamos que el contenido de este archivo estaba
+comentado, por lo que restauramos la lineas necesarias para el arranque
+del sistema. \\
+
+El siguiente archivo que revisamos fue /boot/grub/grub.cfg el cual al
+no encontrar en el directorio necesario, decidimos volverlo a generar,
+posteriormente lo encontramos en otra ubicación pero como no lo necesitabamos ya
+lo eliminamos. \\
+
+Los siguientes pasos los hicimos después de clase: \\
+
+Una vez arreglados los archivos anteriores decidimos intentar reiniciar
+el sistema para verificar si las cosas iban bien, al reiniciar notamos
+que ya podiamos hacer login, sin embargo nos dimos cuenta de que el
+teclado estaba configurado con una distribución diferente (de francia), por
+lo que para agilizar las cosas nuevamente entramos en el modo rescate de la
+ISO de Debian y configuramos el teclado, ademas al recordar que no
+contabamos con la contraseña de root, la cambiamos para poder iniciar
+sesión. \\
+
+Reiniciamos el sistema nuevamente y al instante notamos que el prompt
+no se mostraba de forma correcta por lo que revisamos el archivo de
+configuración de bash /etc/bash/bashrc y encontramos que las lineas
+donde se definia el prompt estaban comentadas, por lo que corregimos esto
+y volvimos a cargar bash para ver los cambios. Ademas revisamos el archivo
+/etc/profile donde había lineas modificadas que definen la variable PS1
+(variable del prompt) por lo que tambien corregimos esto. \\
+
+Comparando los archivos y directorio del directorio raiz con los de una
+instalación correcta nos dimos cuenta de que faltaba el directorio /mnt
+por lo que lo creamos (aunque este no es indispensable). \\
+
+Al querer eliminar el archivo anterior de grub.cfg que no nos percatamos
+estaba con otro nombre dentro de /boot/grub nos dimos cuenta de que los
+permisos para la mayoría de estos archivos había sido cambiados, por lo
+que los restauramos comparandolos con los de la instalación correcta. \\
+
+Antes de poder cambiar estos permisos nos dimos cuenta de que no podiamos
+usar el comando chmod, hacia faltabel binario, por lo que nuevamente lo
+copiamos desde la ISO montada. \\
+
+En este punto todo parecía funcionar bien, por curiosidad y sobre todo
+para buscar más errores en el sistema intentamos hacer ping a una
+dirección ip lo cual fallo, por lo que revisamos los archivos de
+configuración para las interfaces de red /etc/network/interfaces
+el cual no existía y volvimos a crear. Reiniciamos el servicio de red
+y solicitamos una dirección ip al servidor dhcp e intentamos nuevamente
+hacer ping, está vez con éxito. \\
+
+Otra vez todo parecía funcionar bien, por lo que pasamos bastante rato
+buscando nuevos errores, al no encontrarlos decidimos iniciar sesión con
+el usuario user, por lo que establecimos una nueva contraseña para este. \\
+
+Al intentar iniciar sesión esta se cerraba automaticamente, por lo que
+la lógica nos llevo a revisar el archivo /etc/passwd buscando errores,
+ahí encontramos que en la linea correspondiente a user en lugar de tener
+la ruta a un shell tenía nologin por lo que corregimos esto, con lo que
+pudimos iniciar sesión con dicho usuario. \\
+
+Al iniciar sesión notamos que no funcionaba el comando ls ya que imprimía
+:v al usarlo, ya que el de root funcionaba correctamente no se trataba
+de un problema con el binario, por lo que revisamos el archivo
+/home/user/.bashrc el cual tenía un alias definido para ls, por lo que
+lo quitamos. \\
+
+Finalmente buscamos más errores en apt o en algunos otros de los binarios
+más usados pero no encontramos nada por lo que terminamos. \\
+
+
+
+
+
+\newpage
+
+\textbf{Bibliografía} \\
+
+\begin{itemize}
+
+\item \url{}
+\end{itemize}
+
+
+\end{document}
