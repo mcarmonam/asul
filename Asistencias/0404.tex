@@ -1,0 +1,99 @@
+\documentclass[11pt, a4paper]{report}
+
+\usepackage[utf8]{inputenc}
+\usepackage{fancyvrb}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{multirow}
+\usepackage{graphicx}
+
+\begin{document}
+\title{Clase 46: 04/Abril/2019}
+\author{
+  Carmona Mendoza Mat\'in\\
+  \texttt{313075977}
+}
+\date{}
+\maketitle
+
+Hoy tocó clase con el ayudante y hablamos sobre bootstrapping siendo un término
+utilizado para describir el arranque, o proceso de inicio de cualquier
+ordenador. Suele referirse al programa que arranca un sistema operativo como
+por ejemplo GRUB, LiLo (utilizados en sistemas GNU/Linux, por ejemplo), BCD o
+NTLDR (utilizados en sistemas Windows). Se ejecuta tras el proceso POST
+(power-on-self-test) del BIOS. También es llamado Boot loader (cargador de
+inicio). \\
+
+El proceso de arranque es el siguiente (con el equipo encendido):
+
+\begin{itemize}
+\item Se ejecuta el POST, que se encuentra en la dirección F000:FFF0, que
+  pertenece al ROM-BIOS, destinada a realizar una serie de tests e
+  inicializaciones de los componentes electrónicos conectados (hardware).
+\item Se carga del disco primario el primer sector (cilindro 0, cabeza 0,
+  sector 1) en la dirección 0000:7C00 (7C00 lineal).
+\item Se comprueba que contenga código válido (debe estar firmado con los
+  valores 0x55 y 0xAA en bytes de las posiciones 511 y 512 respectivamente), en
+  cuyo caso se salta a esa dirección (a la que apunta CS:IP).
+\end{itemize}
+
+Despues de eso hablamos soble MMU, la verdad no tenía mucho conocimiento sobre
+este tema pero aprendí que es responsable de gestionar la memoria del sistema. \\
+
+Este componente sirve como una especie de caché entre la CPU y el sistema de
+memoria. Las funciones que realiza la MMU se puede dividir en tres cosas, que
+son la gestión de la memoria hardware, la del sistema operativo y la de
+aplicación. Aunque esta unidad de gestión puede ser un componente separado de
+los demás sistemas, normalmente se encuentra integrado en la CPU. \\
+
+Por norma general, el hardware asociado con la unidad de gestión de memoria
+incluye la memoria RAM y otros cachés de memoria. La RAM es un componente
+físico de almacenamiento que se localiza en el disco duro, y es la zona de
+almacenamiento principal donde los datos son leídos y escritos. La memoria de
+caché se usa para guardar copias de ciertos datos de la memoria principal.  La
+CPU accede a esta información que se encuentra en la memoria de caché, lo cual
+acelera el todo el proceso. Cuando la memoria física se queda sin espacio, el
+ordenador automáticamente usa memoria virtual del disco duro para hacer
+funcionar el programa solicitado. \\
+
+
+La MMU asigna memoria del sistema operativo a varias aplicaciones. En la unidad
+de procesamiento central se encuentra el área de direccionamiento virtual, la
+cual está compuesta de un rango de direcciones que se dividen en páginas. Las
+páginas son bloques secundarios que son iguales en tamaño. El proceso de
+paginación automática permite que el sistema operativo use espacio de
+almacenamiento repartido en el disco duro. \\
+
+También hablamos sobre DMA la cual permite a cierto tipo de componentes de una
+computadora acceder a la memoria del sistema para leer o escribir
+independientemente de la unidad central de procesamiento (CPU). Muchos sistemas
+hardware utilizan DMA, incluyendo controladores de unidades de disco, tarjetas
+gráficas y tarjetas de sonido. DMA es una característica esencial en todos los
+ordenadores modernos, ya que permite a dispositivos de diferentes velocidades
+comunicarse sin someter a la CPU a una carga masiva de interrupciones. \\
+
+Una transferencia DMA consiste principalmente en copiar un bloque de memoria de
+un dispositivo a otro. En lugar de que la CPU inicie la transferencia, la
+transferencia se lleva a cabo por el controlador DMA. Un ejemplo típico es
+mover un bloque de memoria desde una memoria externa a una interna más rápida.
+Tal operación no ocupa al procesador y, por ende, éste puede efectuar otras
+tareas. Las transferencias DMA son esenciales para aumentar el rendimiento de
+aplicaciones que requieran muchos recursos. \\
+
+
+
+
+
+\newpage
+
+\textbf{Bibliografía} \\
+
+\begin{itemize}
+
+\item \url{https://es.wikipedia.org/wiki/Bootstrapping_(informática)}
+\item \url{http://www.ordenadores-y-portatiles.com/mmu.html}
+\item \url{https://conceptosarquitecturadecomputadoras.wordpress.com/acceso-directo-a-memoria-dma/}
+\end{itemize}
+
+
+\end{document}
