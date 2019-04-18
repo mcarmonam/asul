@@ -1,0 +1,202 @@
+\documentclass[11pt, a4paper]{report}
+
+\usepackage[utf8]{inputenc}
+\usepackage{fancyvrb}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{multirow}
+\usepackage{graphicx}
+
+\begin{document}
+\title{Clase 48: 08/Abril/2019}
+\author{
+  Carmona Mendoza Mat\'in\\
+  \texttt{313075977}
+}
+\date{}
+\maketitle
+El profesor comenzó la clase dejándonos una "tarea moral", por así decirlo, la
+cual consistía en responder dudas a los compañeros de nuevo ingreso sobre qué
+distribución de Linux es más conveniente (para ellos) usar como principiante.
+Algunas de las razones que como grupo fueron las siguientes: \\
+
+\begin{itemize}
+\item Caracteristicas de la arquitectura del computador: por ejemplo la
+  capacidad de la memoria RAM, capacidad del disco duro, tamaño de la
+  instrucción (32 bits o 64 bits), el precesador, etc.  
+\item Conocimiento sobre UNIX (comandos, instalación de paquetes, etc).
+\item Gustos personales (Escritorio, ventanas, etc.).
+\item Amigabilidad de la distribución.
+\item Propósitos para los cuales usarás la distribución.
+\end{itemize}
+
+\section*{Distribuciones Estables}
+
+\begin{itemize}
+\item Red Hat Enterprise Linux: Distribución comercial de Linux desarrollada
+  por Red Hat. Ofrece una estabilidad y flexibilidad punteras, lo que la coloca
+  como una de las más recomendadas para empresas y servidores.
+\item Debian: Muy estable y 100\% libre, Debian destaca por su sistema de
+  paquetería .deb y su gestión de paquetes APT. Es una de las distribuciones
+  más importantes de GNU/Linux, ya que en ella se basan gigantes como Ubuntu.
+\item openSUSE: Es una de las alternativas más potente contra la familia de
+  distribuciones basadas en Debian. Está disponible con los entornos de
+  escritorio KDE y Gnome, y cuenta como una de sus mejores armas con la robusta
+  herramienta de instalación y configuración YaST y el configurador gráfico SaX.
+\item Fedora: Distribución gratuita creada y mantenida por la empresa Red Hat
+  que utiliza el sistema de paquetería RPM (Red Hat Package Manager). Tiene
+  tres versiones diferentes para escritorio, servidores y sistemas en la nube,
+  y destaca por su seguridad gracias al sistema SELinux ("Security-Enhanced
+  Linux").
+\item CentOS: Nació como un derivado gratuito de la distribución comercial Red
+  Hat Enterprise Linux (RHEL) destinada al uso empresarial. Recientemente unió
+  las fuerzas con el propio Red Hat, y sigue siendo una apuesta segura para los
+  que busquen un código de gran calidad.
+\item Arch Linux: Una distribución modular en la que empiezas desde cero y
+  tienes que ir añadiéndole los componentes que quieras. No es muy apta para
+  principiante, y utiliza pacman, su propio gestor de paquetes. Se trata de una
+  Rolling Release, lo que quiere decir que todos sus componentes van
+  actualizándose sin necesidad de instalar versiones nuevas del sistema
+  operativo.
+\item Manjaro: Una prometedora distribución que promete llevar todo el
+  potencial de Arch Linux al usuario menos experimentado. Para eso, ofrece un
+  sistema operativo ya montado y basado en Arch, con un instalador sencillo
+  como el que podemos encontrar en otras distribuciones como Ubuntu. Tiene
+  versiones oficiales con los entornos de escritorio XFCE y KDE.
+\end{itemize}
+
+\section*{Distribuciones para Principiantes}
+
+\begin{itemize}
+\item Ubuntu: Una de las distribuciones más utilizadas gracias a su gran
+  facilidad de uso. Basada en Debian, es amada y odiada por partes iguales por
+  su exclusivo entorno de escritorio Unity, con el que persigue convertirse en
+  una distribución versátil que pueda utilizarse tanto en ordenadores como
+  móviles y tabletas.
+\item Linux Mint: Basado en Ubuntu, es uno de los más recomendados para todos
+  aquellos que tocan Linux por primera vez. Su entorno de escritorio, Cinnamon,
+  tiene muchas similitudes con el de Windows, y es también uno de los más
+  personalizables.
+\item Elementary OS: De todas las distribuciones basadas en Ubuntu, esta una de
+  las que más personalidad tiene gracias a su cuidadísimo aspecto, que imita el
+  del sistema operativo OS X de Apple. Increíblemente rápida y fácil de usar,
+  le ofrece al usuario todo lo que pueda necesitar desde el primer momento,
+  incluyendo una colección de aplicaciones propias diseñadas para integrarse a
+  la perfección con su estilo visual.
+\item Zorin OS: Distribución también basada en Ubuntu que nació con la
+  intención de ayudar a que el usuario diera el salto a Linux ofreciéndole una
+  interfaz lo más similar posible a Windows. Tiene varias versiones, algunas
+  gratuitas como Core (versión básica), Lite (para PCs poco potentes) y
+  Educational (incluye aplicaciones educativas), y otras cuantas de pago muy al
+  estilo de las versiones de Windows.
+\item Peppermint OS: Distribución rápida y ligera basada en Ubuntu con entorno
+  de escritorio LXDE. Utiliza la tecnología Prism de Mozilla para integrarse
+  con las aplicaciones basadas en la nube, utilizando las webapps como si
+  fueran nativas. Se presenta como una alternativa a otros sistemas basados en
+  la nube como Chrome OS.
+\end{itemize}
+
+\section*{Distribuciones con buena Privacidad}
+
+\begin{itemize}
+\item Tails: Promocionada por el propio Edward Snowden y basada en Debian, es
+  una distribución lista para ser ejecutada desde un USB o DVD. Tails se
+  conecta a TOR tan pronto termina el proceso de inicio del sistema operativo,
+  y toda conexión a Internet se realiza a través de esta red.
+\item Kali Linux: Distribución basada en Debian con una inmensa colección de
+  herramientas para proteger nuestros equipos. Utiliza un kernel personalizado
+  con parches de seguridad y tiene soporte para la arquitectura ARM.
+\item BlackArch Linux: Una distribución orientada a la seguridad informática
+  que en un principio nació como expansión de Arch Linux, pero que ha seguido
+  su propio camino. Nos da acceso a una impresionante cantidad de herramientas
+  de hacking entre las que destaca Sploitctl, un script que permite instalar,
+  actualizar y buscar sploits.
+\item Arch Assault: Se trata de una nueva distribución, también basada en Arch
+  Linux y muy parecida a la anterior, también dirigida a hackers y amantes de
+  la seguridad. Minimalista, con gestor de ventanas Openbox acompañado por el
+  panel Tint2, a pesar de estar aun verde ya ofrece soporte para arquitecturas
+  ARM.
+\end{itemize}
+
+\section*{Distribuciones para Equipos no tan Potentes}
+
+\begin{itemize}
+\item Puppy Linux: Una minúscula distribución que puede llevarse en un USB o
+  CD, pero sorprendentemente rápida al cargarse enteramente en la memoria RAM
+  del ordenador. Se carga en 30 o 40 segundos y ocupa sólo 100 MB.
+\item Lubuntu: Se trata de una versión de Ubuntu mucho más ligera y asequible
+  para equipos poco potentes al utilizar el sistema de escritorio LXDE y el
+  gestor de ventanas Openbox. También incluye software personalizado bastante
+  más ligero, por lo que sólo nos pide 128MB de RAM y un Pentium II o Celeron
+  de 1999 para funciona.
+\item Damn Small Linux: Distribución especialmente diseñada para los equipos
+  más antiguos, como los Pentium de primera generación o incluso los i486. Como
+  entorno gráfico y gestor de ventanas nos propone JWM, su iso ocupa apenas 50
+  MB y sólo nos pide como mínimo un Intel 486DX y 16 MB de memoria RAM.
+\item SliTaz: Otro peso pluma aunque con un software ligeramente más moderno
+  que el del anterior. Utiliza el entorno Openbox y sólo necesita un Pentium III con 256MB de RAM y 100 MB libres en el disco duro para funcionar.
+\item LXLE: Basada en Lubuntu, esta distribución promete ser aun más ligera
+  gracias a un mejor procesado de inicio y el entorno de escritorio LXDE.
+  Ofrece varios perfiles que amoldarán la distro para que se parezca a Windows
+  XP, Vista, y 7 Starter/Basic.
+\item Bodhi Linux: Aunque actualmente su desarrollo está paralizado después de
+  que su creador abandonase el barco, aun podemos utilizar las últimas
+  versiones de esta distribución para nuestros equipos antiguos. Utiliza un
+  entorno de escritorio Enlightenment y sólo pide como mínimo un equipo con
+  procesador de 300 MHz, 128 MB de RAM y 2,5 GB de espacio libre en el disco
+  duro.
+\item Q4OS: Y si el anterior era un proyecto que llegaba a su fin, Q4OS es uno
+  que está comenzando. Se trata de una distro basada en Debian. Su entorno de
+  escritorio deriva de la una versión 3.x de KDE llamada Trinity DE e imita el
+  aspecto de Windows XP. Puede usarse en equipos con Pentium de 300MHz, 128 MB
+  de RAMy 3 GB de disco duro.
+\end{itemize}
+
+\section*{Distribuciones para distintos Hobbies}
+
+\begin{itemize}
+\item Distro Astro: Esta distribución está basada en Ubuntu 14.04 LTS y utiliza
+  el entorno de escritorio MATE, aunque lo más importante es su completa
+  colección de aplicaciones dirigidas a los amantes de la astronomía.
+\item SteamOS: Aun en fase beta, esta es la distribución basada en Debian
+  desarrollada por Valve, y que está más dirigida a ser una especie de media
+  center para videojuegos integrando el modo big picture que un sistema de
+  sobremesa.
+\item ArtistX: Distribución de Linux enfocada en la producción multimedia.
+  Basada en Ubuntu, aunque diseñada para ser utilizada en formato LiveDVD y
+  USB, se puede instalar en cualquier equipo. Usa el entorno KDE y ofrece una
+  colección de programas de código abierto para edición de vídeo y creación de
+  gráficos 2D y 3D.
+\item Ubuntu Studio: Basada en Ubuntu y orientada a la edición multimedia
+  profesional de audio, video y gráficos. Utiliza el entorno de escritorio Xfce
+  y no lleva preinstalado ningún tipo de software ofimático, sólo el diseñado
+  para la edición multimedia.
+\item Scientific Linux: Se trata de un clon a nivel binario de la distribución
+  Red Hat Enterprise Linux, y está desarrollada y mantenida por los
+  laboratorios de Física CERN y Fermilab con el objetivo de tener un sistema
+  operativo específico para la computación científica.
+\item CEELD: Distro basada en OpenSUSE que usa el entorno KDE y está
+  especialmente dirigida a los ingenieros electrónicos y a estudiantes de esta
+  carrera, al permitirles diseñar o simular circuitos electrónicos.
+\item Edubuntu: Otro derivado de Ubuntu, pero en esta ocasión especialmente
+  dirigido a escuelas y profesores. Ofrece una gran colección de software y
+  herramientas educativas, por lo que también es una buena opción para instalar
+  en los ordenadores de los más jóvenes de la casa.
+\item Openelec: Pequeña distribución Linux creada desde cero para convertir un
+  ordenador en un centro multimedia basado en Kodi, lo que antes se conocía
+  como XBMC. Hace lo que promete y necesita sólo 90-125 MB de almacenamiento
+  interno. A parte de su versión oficial, tiene otras dos buids para Raspberry
+  Pi y Apple TV.
+\end{itemize}
+
+\newpage
+
+\textbf{Bibliografía} \\
+
+\begin{itemize}
+
+\item \url{https://www.genbeta.com/linux/31-distribuciones-de-linux-para-elegir-bien-la-que-mas-necesitas}
+\end{itemize}
+
+
+\end{document}
