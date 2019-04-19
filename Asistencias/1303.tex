@@ -1,0 +1,74 @@
+\documentclass[11pt, a4paper]{report}
+
+\usepackage[utf8]{inputenc}
+\usepackage{fancyvrb}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{multirow}
+\usepackage{graphicx}
+
+\begin{document}
+\title{Clase 32: 13/Marzo/2019}
+\author{
+  Carmona Mendoza Mat\'in\\
+  \texttt{313075977}
+}
+\date{}
+\maketitle
+
+Hoy en clase seguimos trabajando con las máquinas virtuales. Después de
+resolver algunos los problemas con el inicio de las máquinas virtuales realizamos la copia de nuestra llave publica al directorio \/.ssh de la cuenta user de
+cada máquina virtual, para no tener que hacer esto dirección por dirección nos
+ayudamos de un ciclo for dentro de la línea de comandos. \\
+
+También platicamos acerca de que ya que un servidor DHCP esta asignando
+las direcciones IP de manera dinámica en el segmento de red sobre el que están
+las máquinas virtuales, ¿como podríamos hacer? para mantener una lista
+actualizada con únicamente las direcciones IP de demás máquinas virtuales de
+manera que siempre que necesitáramos conectarnos con una lo pudiéramos hacer sin
+tener que revisar que dirección IP tiene. \\
+
+Como información adicional busqué información acerca del protocolo ARP y
+su funcionamiento y el ataque arp spoof ing. \\
+
+ARP: Es un protocolo de resolución de direcciones. Permite encontrar la
+dirección hardware equivalente a una determinada dirección IP, actuando como
+traductor e intermediario. Cuando una máquina desea ponerse en contacto con
+otra y no se conoce su dirección IP entonces envía una petición ARP por
+broadcast (o sea a todas las maquinas). El protocolo establece que solo
+contestara a la petición, si esta lleva su dirección IP. Por lo tanto solo
+contestará la máquina
+que corresponde a la dirección IP buscada, con un mensaje que incluya la
+dirección física. El software de comunicaciones debe mantener una caché con los
+pares IP-dirección física. De este modo la siguiente vez que hay que hacer una
+transmisión a es dirección IP, ya conoceremos la dirección física. \\
+
+Ataque ARP Spoofing: Un ARP Spoofing es una especie de ataque en el que
+un atacante envía mensajes falsificados ARP (Address Resolution Protocol) a
+una LAN. \\
+
+Como resultado, el atacante vincula su dirección MAC con la dirección IP
+de un equipo legítimo (o servidor) en la red. \\
+
+Si el atacante logró vincular su dirección MAC a una dirección IP auténtica,
+va a empezar a recibir cualquier dato que se puede acceder mediante la dirección
+IP. \\
+
+ARP Spoofing permite a los atacantes maliciosos interceptar, modificar o
+incluso retener datos que están en tránsito. Los ataques de suplantación ARP
+ocurren en redes de área local que utilizan protocolo de resolución de
+direcciones (ARP).
+
+\newpage
+
+\textbf{Bibliografía} \\
+
+\begin{itemize}
+
+\item \url{https://medium.com/@marvin.soto/qu\%C3\%A9-es-el-envenenamiento-arp-
+  o-ataque-arp-spoofing-y-c\%C3\%B3mo-funciona-7f1e174850f2}
+\item \url{https://www.ecured.cu/Protocolo de resoluci\%C3\%B3n de direcciones}
+\end{itemize}
+
+
+\end{document}
