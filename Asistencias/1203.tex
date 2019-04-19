@@ -1,0 +1,58 @@
+\documentclass[11pt, a4paper]{report}
+
+\usepackage[utf8]{inputenc}
+\usepackage{fancyvrb}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{multirow}
+\usepackage{graphicx}
+
+\begin{document}
+\title{Clase 31: 12/Marzo/2019}
+\author{
+  Carmona Mendoza Mat\'in\\
+  \texttt{313075977}
+}
+\date{}
+\maketitle
+
+Hoy en clase con el profesor continuamos trabajando con las máquinas
+virtuales. Lo primero que hicimos fue configurar el adaptador de la máquina para
+que fuera de tipo ”bridge” esto con el fin de que la máquina virtual fuera
+visible desde cualquier otro equipo del segmento de la red. Para probar esto
+usamos el comando ping para intentar comunicarnos con las otras máquinas
+virtuales.
+Una vez que verificamos las direcciones IP de las otras máquinas los siguiente
+que hicimos fue conectarnos por medio de ssh con el usuario user ya que todas
+las máquinas tienen este usuario con la misma contraseña, después de iniciar
+sesión dejamos en el home del usuario un archivo que tenía por nombre nuestro
+número de cuenta y contenía nuestro nombre y apellidos.
+Posteriormente generamos las llaves publicas y privadas para la autenticación
+en ssh con el comando ssh keygen, este comando genera dos archivos uno con
+la llave publica y el otro con la llave privada, nuevamente usando ssh
+agregamos la llave publica al archivo \/.ssh\/known hosts esto con el fin de
+poder
+realizar la conexión por medio de ssh sin tener que estar autenticándonos con
+la contraseña cada vez que iniciemos sesión. \\
+
+SSH o Secure Shell, es un protocolo de administración remota que permite a los
+usuarios controlar y modificar sus servidores remotos a través de Internet. El
+servicio se creó como un reemplazo seguro para el Telnet sin cifrar y utiliza
+técnicas criptográficas para garantizar que todas las comunicaciones hacia y
+desde el servidor remoto sucedan de manera encriptada. Proporciona un mecanismo
+para autenticar un usuario remoto, transferir entradas desde el cliente al host
+y retransmitir la salida de vuelta al cliente.
+
+
+
+\newpage
+
+\textbf{Bibliografía} \\
+
+\begin{itemize}
+
+\item \url{https://www.hostinger.mx/tutoriales/que-es-ssh}
+\end{itemize}
+
+
+\end{document}
