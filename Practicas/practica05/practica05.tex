@@ -1,0 +1,148 @@
+\documentclass[11pt, a4paper]{report}
+
+\usepackage[utf8]{inputenc}
+\usepackage{fancyvrb}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{multirow}
+\usepackage{graphicx}
+
+\begin{document}
+\title{Práctica 05: Compilar el Kernel}
+\author{
+  Carmona Mendoza Mat\'in\\
+  \texttt{313075977}
+}
+\date{}
+\maketitle
+
+Para comenzar descargamos la última versión estable del kernel de la
+página oficial kernel.org. \\
+
+Para configurar el kernel utilizaremos la herramienta make menuconfig. \\
+
+Para comenzar el proceso descomprimimos el código fuente del kernel que
+descargamos anteriormente para poder copiar la configuración del kernel
+actual a ese directorio. Todo esto se hace con los siguientes comandos: \\
+
+  \begin{figure}[!ht] 
+    \begin{center}  
+      \includegraphics[width=1.1\textwidth]{1.png} 
+      \caption{} 
+    \end{center} 
+  \end{figure} 
+
+  Una vez hecho esto ejecutaremos el comando make menuconfig y se abrirá
+  una interfaz que nos permitirá navegar las categorias de drivers. \\
+
+    \begin{figure}[!ht] 
+    \begin{center}  
+      \includegraphics[width=1.0\textwidth]{2.png} 
+      \caption{} 
+    \end{center} 
+  \end{figure} 
+
+    Por lo tanto, es importante conocer bien nuestro equipo a fin de no
+    deshabilitar drivers que serán necesarios. Comandos como lspci y
+    dmesg pueden sernos útiles en este aspecto. \\
+
+    La primera cosa que quité fue Touchscreen ya que tiene que ver con
+    todo aquello de la pantalla tpactil y mi computadora no cuenta con esa
+    función. \\
+
+    \begin{figure}[!ht] 
+      \begin{center}  
+        \includegraphics[width=1.25\textwidth]{3.png} 
+        \caption{} 
+      \end{center} 
+    \end{figure}
+    
+    Otra cosa que modifiqué fue Amateur radio support ya que es un driver
+    para la configuración de protocolos para estaciones de radio. \\
+
+    \begin{figure}[!ht] 
+      \begin{center}  
+        \includegraphics[width=1.25\textwidth]{4.png} 
+        \caption{} 
+      \end{center} 
+    \end{figure}
+
+    Quité también la configuración del disco duro ya que mi pc no cuenta
+    con uno. \\
+
+    \begin{figure}[!ht] 
+      \begin{center}  
+        \includegraphics[width=1.25\textwidth]{5.png} 
+        \caption{} 
+      \end{center} 
+    \end{figure}
+
+    Otra cosa que omití fue Macintosh device drivers el cual te ayuda
+    para cofigurar dispositivos marca Mac. \\
+
+    \begin{figure}[!ht] 
+      \begin{center}  
+        \includegraphics[width=1.25\textwidth]{6.png} 
+        \caption{} 
+      \end{center} 
+    \end{figure}
+    
+    Desmarqué Laptop Hybrid Graphics ya que mi computador no tiene
+    gráficos híbridos. \\
+      
+    \begin{figure}[!ht] 
+      \begin{center}  
+        \includegraphics[width=1.25\textwidth]{7.png} 
+        \caption{} 
+      \end{center} 
+    \end{figure}
+
+    Quité Nouveau (NVIDIA) cards porque mi pc no cuenta con una tarjeta
+    gráfica Nvidia, tiene una intedrada. \\
+
+    \begin{figure}[!ht] 
+      \begin{center}  
+        \includegraphics[width=1.25\textwidth]{8.png} 
+        \caption{} 
+      \end{center} 
+    \end{figure}
+   
+    \newpage
+    
+    Omití Analog TV support ya que no tengo la tarjeta de TV/radio. \\
+
+    \begin{figure}[!ht] 
+      \begin{center}  
+        \includegraphics[width=1.25\textwidth]{9.png} 
+        \caption{} 
+      \end{center} 
+    \end{figure}
+        
+    Omití Digital TV support ya que no tengo la tarjeta de TV/radio. \\
+
+    \begin{figure}[!ht] 
+      \begin{center}  
+        \includegraphics[width=1.25\textwidth]{10.png} 
+        \caption{} 
+      \end{center} 
+    \end{figure}
+
+    Omití AM/FM radio receivers ya que no tengo la tarjeta de TV/radio.\\
+    
+    \begin{figure}[!ht] 
+      \begin{center}  
+        \includegraphics[width=1.25\textwidth]{11.png} 
+        \caption{} 
+      \end{center} 
+    \end{figure}    
+
+    Para terminar compilamos la nueva configuración del kernel. \\
+
+    \begin{figure}[!ht] 
+      \begin{center}  
+        \includegraphics[width=1.25\textwidth]{13.png} 
+        \caption{} 
+      \end{center} 
+    \end{figure}    
+    
+\end{document}

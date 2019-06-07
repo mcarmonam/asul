@@ -1,0 +1,94 @@
+\documentclass[11pt, a4paper]{report}
+
+\usepackage[utf8]{inputenc}
+\usepackage{fancyvrb}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{multirow}
+\usepackage{graphicx}
+
+\begin{document}
+\title{Clase 29: 08/Marzo/2019}
+\author{
+  Carmona Mendoza Mat\'in\\
+  \texttt{313075977}
+}
+\date{}
+\maketitle
+
+En la clase de hoy y parte de laboratorio seguimos con la instalción de Debian
+sin entorno gráfico. En esta ocasión hicimos el proceso en una maquina virtual.
+
+Pondré los pasos a seguir:
+
+\begin{itemize}
+\item Pon la imagen de debian y reinicia tu pc. Y seleccionas Install.
+
+  \begin{figure}[!ht] 
+    \begin{center}  
+      \includegraphics[width=0.5\textwidth]{1.png} 
+      \caption{} 
+    \end{center} 
+  \end{figure} 
+
+\item Luego sigue el proceso agregando un dominio, si no tienes un dominio
+  puedes inventar uno, sólo asegúrate de recordarlo para después agregarlo en
+  otra máquina si es necesario.
+
+  \begin{figure}[!ht] 
+    \begin{center}  
+      \includegraphics[width=0.5\textwidth]{2.png} 
+      \caption{} 
+    \end{center} 
+  \end{figure}
+  
+\item Ahora es tiempo de particionar el disco, si no tienes idea puedes
+  seleccionar el método guiado para dejar que el programa cree las particiones
+  automáticamente
+
+  \begin{figure}[!ht] 
+    \begin{center}  
+      \includegraphics[width=0.5\textwidth]{3.png} 
+      \caption{} 
+    \end{center} 
+  \end{figure}
+  
+\item Cuando hayas terminado con las particiones el programa, el sistema
+  escaneará el disco y te preguntará si quieres escanear otro disco, selecciona
+  la opción NO si este es el caso.
+  
+  \begin{figure}[!ht] 
+    \begin{center}  
+      \includegraphics[width=0.5\textwidth]{4.png} 
+      \caption{} 
+    \end{center} 
+  \end{figure}
+
+\item En la siguiente pantalla selecciona tu país para conectarte al servidor
+  optimo, luego configura un proxy si aplica en tu caso, acepta participar o no
+  en el programa de usuarios y llegarás al apartado del entorno grafico SI no
+  quieres un entorno grafico solo debes seleccionar el servidor que prefieras,
+  web server, print server o ssh server. 
+  
+  \begin{figure}[!ht] 
+    \begin{center}  
+      \includegraphics[width=0.5\textwidth]{5.png} 
+      \caption{} 
+    \end{center} 
+  \end{figure}
+
+\end{itemize}
+
+Por último, solo te hará falta elegir el lugar donde quieres instalar el GRUB Bootloader y tu PC se reiniciará con la instalación completa.
+
+\newpage
+
+\textbf{Bibliografía} \\
+
+\begin{itemize}
+
+\item \url{https://ayudalinux.com/instalar-debian-sin-entorno-grafico/}
+\end{itemize}
+
+
+\end{document}
