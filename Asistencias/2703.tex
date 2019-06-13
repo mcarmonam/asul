@@ -1,0 +1,63 @@
+\documentclass[11pt, a4paper]{report}
+
+\usepackage[utf8]{inputenc}
+\usepackage{fancyvrb}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{multirow}
+\usepackage{graphicx}
+
+\begin{document}
+\title{27/Marzo/2019}
+\author{
+  Carmona Mendoza Mat\'in\\
+  \texttt{313075977}
+}
+\date{}
+\maketitle
+
+En la clase de hoy con el profesor continuamos con la creación de una máquina
+virtual con Windows 10, por motivos de tiempo fue mejor copiar una máquina virtual ya con la instalación realizada y no hacerla nosotros mismos. \\
+
+Lo siguiente que hicimos fue compartir un directorio desde nuestra máquina con
+Debian mediante samba, para esto modificamos el archivo $/etc/samba/smb.conf$
+para indicarle el segmento y la interfaz de red, después indicamos el nombre
+con el que se comparte el directorio así como ciertas especificaciones para
+este como lo son permisos de solo lectura, permisos para escribir, etc. \\
+
+\textbf{Samba} \\
+
+La creación de Samba es la idea de Andrew Tridgell. Es un proyecto que nació en
+1991 cuando creó un programa servidor de archivos para su red local, la cual
+soportaba un protocolo reconocido como DEC de Digital Pathworks. Aunque en ese
+momento el no lo supo, dicho protocolo se convertiría en SMB luego. \\
+
+Samba, básicamente, es una suite de aplicaciones Unix que implementa el
+protocolo SMB (Server Message Block). Este protocolo es empleado para
+operaciones cliente-servidor en una red. Entonces, mediante el uso de este
+protocolo Samba le permite a Unix establecen comunicación con productos
+Microsoft Windows a través del protocolo. De esta manera, una maquina Unix con
+Samba puede ingresar a la red Microsoft, mostrándose como Servidor y brindar
+los siguientes servicios:
+
+\begin{itemize}
+\item Compartir diversos sistemas de archivos.
+\item Compartir impresoras, con instalación en el servidor como en los clientes.
+\item Proveer un visualizados de clientes en red, lo que facilitara la colaboración con nuestros usuarios.
+\item Permite realizar verificación de clientes a través de un login contra un dominio Windows.
+\item Proporcionar o asistir con un servidor de resolución de nombres WINS.
+\end{itemize}
+
+\newpage
+
+\textbf{Bibliografía} \\
+
+\begin{itemize}
+
+\item \url{https://www.profesionalreview.com/2017/03/25/servidor-samba-conceptos-y-configuracion-rapida/}
+
+
+\end{itemize}
+
+
+\end{document}
