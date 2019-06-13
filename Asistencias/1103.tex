@@ -1,0 +1,65 @@
+\documentclass[11pt, a4paper]{report}
+
+\usepackage[utf8]{inputenc}
+\usepackage{fancyvrb}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{multirow}
+\usepackage{graphicx}
+
+\begin{document}
+\title{11/Marzo/2019}
+\author{
+  Carmona Mendoza Mat\'in\\
+  \texttt{313075977}
+}
+\date{}
+\maketitle
+
+En la clase de hoy con el profesor vimos qué era el protocolo DHPC siendo una
+extensión del protocolo Bootstrap (BOOTP) desarrollado en 1985 para conectar
+dispositivos como terminales y estaciones de trabajo sin disco duro con un
+Bootserver, del cual reciben su sistema operativo. El DHCP se desarrolló como
+solución para redes de gran envergadura y ordenadores portátiles y por ello
+complementa a BOOTP, entre otras cosas, por su capacidad para asignar
+automáticamente direcciones de red reutilizables y por la existencia de
+posibilidades de configuración adicionales. \\
+
+La asignación de direcciones con DHCP se basa en un modelo cliente-servidor: el
+terminal que quiere conectarse solicita la configuración IP a un servidor DHCP
+que, por su parte, recurre a una base de datos que contiene los parámetros de
+red asignables. Este servidor, componente de cualquier router ADSL moderno,
+puede asignar los siguientes parámetros al cliente con ayuda de la información
+de su base de datos:
+
+\begin{itemize}
+\item Dirección IP única.
+\item Máscara de subred.
+\item Puerta de enlace estándar.
+\item Servidores DNS.
+\item Configuración proxy por WPAD (Web Proxy Auto-Discovery Protocol).
+\end{itemize}
+
+El Dynamic Host Configuration Protocol tiene un punto débil y es su capacidad
+para ser manipulado fácilmente. Como el cliente hace un llamamiento a
+discreción a todos los servidores DHCP que podrían responder a su petición, a
+un atacante le sería relativamente sencillo entrar en la red y hacerse pasar
+por uno de ellos si tuviera acceso a ella. Este denominado servidor DHCP
+“Rogue” (corrupto) intenta adelantarse con su respuesta al servidor legítimo y
+si tiene éxito envía parámetros manipulados o inservibles. Si no envía puerta
+de enlace, asigna una subred a cada cliente o responde a todas las peticiones
+con la misma dirección IP, este atacante podría iniciar en la red un ataque de
+denegación de servicio o Denial of Service.
+
+\newpage
+
+\textbf{Bibliografía} \\
+
+\begin{itemize}
+
+\item \url{https://www.ionos.mx/digitalguide/servidores/configuracion/que-es-el-dhcp-y-como-funciona/}
+
+\end{itemize}
+
+
+\end{document}
