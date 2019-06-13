@@ -1,0 +1,73 @@
+\documentclass[11pt, a4paper]{report}
+
+\usepackage[utf8]{inputenc}
+\usepackage{fancyvrb}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{multirow}
+\usepackage{graphicx}
+
+\begin{document}
+\title{20/Marzo/2019}
+\author{
+  Carmona Mendoza Mat\'in\\
+  \texttt{313075977}
+}
+\date{}
+\maketitle
+
+En la clase con el profesor hablamos sobre la herramienta axel. Axel es un
+comando que sirve como acelerador de descargas. ¿Cómo lo hace? Abre más de una
+conexión HTTP o FTP por cada intento de descarga, de tal modo que cada una de
+ellas transfiere su propia parte del archivo. El comando es particularmente
+útil cuando los servidores limitan el ancho de banda disponible por conexión. \\
+
+Una vez más, la distribución de referencia será Ubuntu. \\
+
+sudo apt-get install axel \\
+
+En otros sabores de Linux puedes descargar y compilar el código fuente de axel,
+si no es que ya está incluido en los repositorios correspondientes. \\
+
+\section*{Virtualización y Emulación}
+
+También hablamos sobre virtualización y emulación. \\
+
+Un emulador es un programa de software que simula la funcionalidad de otro
+programa o un componente de hardware. Dado que implementa funcionalidad por
+software, proporciona una gran flexibilidad y la capacidad de recopilar
+información muy detallada acerca de la ejecución. \\
+
+El programa incluso podría ser escrito para una arquitectura diferente a
+aquella sobre la cual el emulador se ejecuta –como ser, ejecutar un programa de
+Android escrito para ARM en un emulador sobre un host x86. El inconveniente de
+la emulación es que la capa de software incurre en una penalización en el
+rendimiento, que debe ser cuidadosamente administrada a fin de crear un sistema
+escalable. \\
+
+Con la virtualización, el programa huésped se ejecuta realmente en el hardware
+subyacente. El software de virtualización (VMM, Virtual Machine Monitor) sólo
+media en los accesos de las diferentes máquinas virtuales al hardware real.
+Así, éstas son independientes, y pueden ejecutar programas a velocidad casi
+nativa. \\
+
+Sin embargo, un programa en ejecución ocupa los recursos físicos reales, y como
+resultado, el VMM y el sistema de análisis no pueden ejecutarse
+simultáneamente, volviendo un desafío a la recolección detallada de datos.
+Además, es difícil lograr ocultar por completo el VMM de las rutinas de
+detección embebidas en las muestras de malware. \\
+
+\newpage
+
+\textbf{Bibliografía} \\
+
+\begin{itemize}
+
+\item \url{https://hipertextual.com/archivo/2010/06/comando-linux-axel-un-ligero-acelerador-de-descargar-http/}
+
+\item \url{https://www.welivesecurity.com/la-es/2014/07/28/virtualizacion-o-emulacion-esa-es-la-cuestion/}
+
+\end{itemize}
+
+
+\end{document}
