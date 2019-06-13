@@ -1,0 +1,82 @@
+\documentclass[11pt, a4paper]{report}
+
+\usepackage[utf8]{inputenc}
+\usepackage{fancyvrb}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{multirow}
+\usepackage{graphicx}
+
+\begin{document}
+\title{15/Marzo/2019}
+\author{
+  Carmona Mendoza Mat\'in\\
+  \texttt{313075977}
+}
+\date{}
+\maketitle
+
+Hoy en clase con el ayudante continuamos revisando algunas de las opciones de
+que se pueden configurar antes de compilar el kernel, entre las cuales
+revisamos un módulo para procesadores Intel. También continuamos revisando como
+aplicar parches al kernel, esto es útil para agregar algún modulo que no venga
+por defecto en el. \\
+
+Al Kernel le debemos que hayamos llegado tan profundo en la informática
+verdadera (en la que se sabe ciertamente cómo se maneja la información en su
+más bajo nivel). En la actualidad no es tan recurrente que necesitemos compilar
+un kernel, aunque tiempo atrás si lo era. Hoy día esto se hace por alguna
+necesidad específica o por el simple hecho de aprender cómo se hace. \\
+
+Entre las razones existentes para compilar un kernel tenemos:
+
+\begin{itemize}
+\item Eres un desarrollador del kernel.
+\item Necesitas compilar un kernel con alguna característica especial que un
+  kernel oficial de tu distro no tiene.
+\item Te estás preparando para corregir un bug en el kernel oficial de tu
+  distro.
+\item Tienes hardware que el kernel oficial de tu distro no soporta.
+\end{itemize}
+
+Existen muchas maneras de compilar el kernel (casi una por cada distribución).
+Esto significa que para cada distro, ya sea basada en Red Hat, Debian o
+Slackware, debemos documentarnos muy bien antes de comenzar tan importante
+tarea, porque si se nos queda algún módulo excluido o incluido sin necesidad
+podría generar conflictos e incluso no funcionar correctamente. \\
+
+Todo el proceso se puede resumir en los siguientes pasos generales para todas
+las distros:
+
+\begin{itemize}
+\item Obtener las fuentes del kernel.
+\item Instalar las herramientas necesarias para la compilación (gcc,
+  build-essentials, etc.).
+\item Descomprimir las fuentes del kernel en /usr/src/
+\item Configurar el kernel (ej. make menuconfig).
+\item Compilar (make), compilar los módulos (make modules), instalar los
+  módulos, (make modules\_install).
+\item Instalar el kernel compilado (make install).
+\item Crear la imagen (initrd) para el nuevo kernel y ajustar grub para que la
+  encuentre.
+\end{itemize}
+
+Este proceso puede ser una excelente manera de ajustar nuestro sistema para que
+soporte nuevo hardware o para hacerlo más liviano quitando, cuidadosamente,
+módulos que no utilizaremos. De cualquier manera es recomendable que aparte de
+esta guía busques la ayuda de personas más experimentadas si tienes una buena
+razón para hacerlo, aún si lo haces por puro placer o aprendizaje.
+
+\newpage
+
+\textbf{Bibliografía} \\
+
+\begin{itemize}
+
+\item \url{https://www.muylinux.com/2010/11/10/como-compilar-el-kernel-linux-en-ubuntu-fedora-y-otras/}
+
+
+\end{itemize}
+
+
+\end{document}
