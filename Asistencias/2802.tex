@@ -1,0 +1,77 @@
+\documentclass[11pt, a4paper]{report}
+
+\usepackage[utf8]{inputenc}
+\usepackage{fancyvrb}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{multirow}
+\usepackage{graphicx}
+
+\begin{document}
+\title{28/Febrero/2019}
+\author{
+  Carmona Mendoza Mat\'in\\
+  \texttt{313075977}
+}
+\date{}
+\maketitle
+
+En la clase de hoy vimos con el ayudante la instalación de Arch. Arch es una
+distribución Linux para computadoras x86 64 orientada a usuarios avanzados. Se
+compone en su mayor parte de software libre y de codigo abierto (FOSS)​ y
+apoya la participación comunitaria. \\
+
+El enfoque de diseño del equipo de desarrollo, sigue el principio KISS como
+línea general, y se centra en la pobreza , exactitud, minimalismo y
+simplicidad, y espera que el usuario esté dispuesto a realizar un esfuerzo por
+entender el funcionamiento del sistema. El gestor de paquetes escrito
+específicamente para Arch, llamado Pacman, se usa para instalar, eliminar y
+actualizar paquetes. \\
+
+Arch Linux utiliza un modelo de actualización continua, de tal manera que una
+actualización regular del sistema operativo es todo lo que se necesita para
+obtener la última versión del software; las imágenes de instalación son
+simplemente instantáneas de los principales componentes del sistema. \\
+
+Arch Linux define simplicidad como ...una estructura base compacta sin añadidos
+innecesarios, modificaciones, o complicaciones, que permite a un usuario
+individual modificar el sistema de acuerdo a sus propias necesidades. La
+simplicidad de su estructura no implica sencillez en su manejo.\\
+
+\textbf{Instalación} \\
+
+El sitio web de Arch Linux proporciona Imágenes ISO arrancables, que se pueden
+ejecutar desde CD o USB en las arquitecturas soportadas. Un simple script de
+líneas de comando (pacstrap) es usado para instalar el sistemas base. \\
+
+A diferencia de otras distribuciones, la instalación del sistema base de Arch
+Linux no provee de un Entorno de escritorio ni un Servidor gráfico instalados y
+funcionales al usuario, no obstante este lo puede instalar desde los
+repositorios. Tampoco provee de un cargador de arranque, que debe ser
+configurado adecuadamente para que el sistema funcione, y pueda convivir con
+otros sistemas operativos (si los hubiera) en el equipo informático. Los
+paquetes adicionales pueden ser instalados con pacstrap o pacman después
+iniciar el nuevo sistema. \\
+
+Una alternativa al uso de imágenes de CD o USB para la instalación es utilizar
+la versión estática del gestor de paquetes Pacman, desde otro sistema operativo
+basado en Linux, mediante una técnica llamada Bootstrapping.​ El usuario
+puede montar su partición formateando la unidad, e invocando a Pacman mediante
+la línea de comandos puede utilizar el punto de montaje del dispositivo como
+root para sus operaciones. De esta manera, el grupo de paquetes base y los
+paquetes adicionales se pueden instalar en la partición recién formateada.
+
+
+\newpage
+
+\textbf{Bibliografía} \\
+
+\begin{itemize}
+
+\item \url{https://es.wikipedia.org/wiki/Arch_Linux#Instalación}
+
+
+\end{itemize}
+
+
+\end{document}
