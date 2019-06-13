@@ -1,0 +1,50 @@
+\documentclass[11pt, a4paper]{report}
+
+\usepackage[utf8]{inputenc}
+\usepackage{fancyvrb}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{multirow}
+\usepackage{graphicx}
+
+\begin{document}
+\title{22/Marzo/2019}
+\author{
+  Carmona Mendoza Mat\'in\\
+  \texttt{313075977}
+}
+\date{}
+\maketitle
+
+En la clase de hoy se habló de iptables la cual es una parte del kernel de
+Linux, está integrado en el, desde la versión 3 sino recuerdo mal. Es un filtro
+de paquetes de red, podemos decir que es un firewall. \\
+
+Iptables utiliza las tablas de enrutamiento. Estas tablas es la forma en la que
+iptables se organiza para funcionar. Estas tablas albergan reglas que permiten
+aplicar distintos tratamientos a los paquetes de red que llegen a nuestro
+equipo. \\
+
+Las tablas FILTER y NAT son las tablas más importantes para los
+administradores. FILTER es el filtro y NAT network address translation
+(muchos diccionarios, wikipedias, etc traducen translation como traducción pero
+más bien, mi parecer es que la correcta traducción sería traslación Efecto de
+trasladar o trasladarse de lugar, ya que de lo que se trata, es de trasladar
+los paquetes de red de una dirección IP a otra. Seguro que alguien coincide
+conmigo sobre esta mala traducción de anglicismo) es la tabla que se encarga de
+tratar los paquetes cuando estos requieren un tratamiento más específico. \\
+
+
+\newpage
+
+\textbf{Bibliografía} \\
+
+\begin{itemize}
+
+\item \url{https://elbinario.net/2019/03/18/iptables-para-torpes/}
+
+
+\end{itemize}
+
+
+\end{document}
